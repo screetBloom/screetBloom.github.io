@@ -264,18 +264,37 @@
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm install</div></pre></td></tr></table></figure>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">hexo g</div></pre></td></tr></table></figure>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">hexo s</div></pre></td></tr></table></figure>
-<p>这时候在浏览器输入<a href="http://localhost:4000/" target="_blank" rel="external">http://localhost:4000/</a> 就可以看到hexo已经成功生成了博客(目前还是本地).</p>
+<p>这时候在浏览器输入<a href="http://localhost:4000/" target="_blank" rel="external">http://localhost:4000/</a> 就可以看到hexo已经成功生成了博客(目前还是本地).<br><img src="/img/LAND.jpg" alt="Alt text"></p>
 <h3 id="7、配置Hexo到Github"><a href="#7、配置Hexo到Github" class="headerlink" title="7、配置Hexo到Github"></a>7、配置Hexo到Github</h3><p>找到我们刚刚创建的文件夹(如D:\selfBlog\hexo)，在里面找到_config.yml文件，用notepad++打开，直接拖到最后，可以看到</p>
 <p>deploy:<br>  type:<br>改成以下，特别注意，在：的后面是有一个空格的，不然可能出错的，其中screetBloom即在github上面的用户名</p>
 <p>deploy:<br>  type: git<br>  repository: <a href="http://github.com/yourname/screetBloom.github.io.git" target="_blank" rel="external">http://github.com/yourname/screetBloom.github.io.git</a><br>  branch: master<br>保存后，然后在当前文件夹打开Git Bash Here</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">hexo g</div></pre></td></tr></table></figure>
+<pre><code class="bash">hexo g
+</code></pre>
 <pre><code class="bash">hexo d
 </code></pre>
 <p>如果出现以下异常</p>
 <p>ERROR Deployer not found: git<br>尝试输入以下命令，然后重新执行刚刚的两条命令</p>
 <pre><code class="bash">npm install hexo-deployer-git --save
 </code></pre>
+<pre><code class="bash">hexo g
+</code></pre>
+<pre><code class="bash">hexo d
+</code></pre>
 <p>这时候如果弹出一个对话框，输入在guthub上面的用户名和密码即可<br>这时候我们就可以在浏览器输入”screetBloom.github.io”（screetBloom替换成github上的名称）就可以看到博客已经搭建成功了。</p>
+<h3 id="8、修改主题（此处以lilia为例）"><a href="#8、修改主题（此处以lilia为例）" class="headerlink" title="8、修改主题（此处以lilia为例）"></a>8、修改主题（此处以lilia为例）</h3><p>找到我们刚刚创建的文件夹(如D:\selfBlog\hexo)，右击“Git Bash Here”</p>
+<pre><code class="bash">git <span class="built_in">clone</span> https://github.com/litten/hexo-theme-yilia.git themes/yilia
+</code></pre>
+<p>完成后，会在主题文件夹（D:\selfBlog\hexo\themes）生成主题文件lilia<br><img src="/img/theme.png" alt="Alt text"></p>
+<p>再切换回根目录（D:\selfBlog\hexo）；notepad++打开_config.yml,编辑<br>将 theme 对应的值进行修改</p>
+<p>theme: yilia</p>
+<p>接着就自动部署发布：</p>
+<pre><code class="bash">hexo clean
+</code></pre>
+<pre><code class="bash">hexo g
+</code></pre>
+<pre><code class="bash">hexo d
+</code></pre>
+<p>刷新博客主页，你想要的效果就出现了。也可以点击<a href="https://hexo.io/themes/" target="_blank" rel="external">更多主题</a>，挑选自己喜欢的主题进行修改.</p>
 
       
 

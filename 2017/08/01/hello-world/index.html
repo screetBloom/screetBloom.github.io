@@ -20,7 +20,7 @@
 <meta property="og:image" content="http://yoursite.com/img/ssh.png">
 <meta property="og:image" content="http://yoursite.com/img/sshGit.png">
 <meta property="og:image" content="http://yoursite.com/img/git.png">
-<meta property="og:updated_time" content="2017-08-02T03:15:40.462Z">
+<meta property="og:updated_time" content="2017-08-02T03:22:58.102Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="结合github和hexo搭建个人博客的具体操作">
 <meta name="twitter:description" content="if you prefer to Hexo Official website,click Here! And check Official documentation for more info.  If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask m">
@@ -209,7 +209,12 @@
 <p>如果能看到hexo的版本号信息，就表示安装成功了<br>接下来，进入到我们刚刚创建的文件夹(如D:\selfBlog\hexo)，右键打开Git Bash Here<br>然后依次输入以下命令<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">hexo init</div></pre></td></tr></table></figure></p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm install</div></pre></td></tr></table></figure>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">hexo g</div></pre></td></tr></table></figure>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line">hexo s</div><div class="line">``` </div><div class="line">这时候在浏览器输入http://localhost:4000/ 就可以看到hexo已经成功生成了博客(目前还是本地).</div><div class="line"></div><div class="line"></div><div class="line"><span class="comment">### 7、配置Hexo到Github</span></div><div class="line"></div><div class="line">找到我们刚刚创建的文件夹(如D:\selfBlog\hexo)，在里面找到_config.yml文件，用notepad++打开，直接拖到最后，可以看到</div><div class="line"></div><div class="line">deploy:</div><div class="line">  <span class="built_in">type</span>:</div><div class="line">改成以下，特别注意，在：的后面是有一个空格的，不然可能出错的，其中screetBloom即在github上面的用户名</div><div class="line"></div><div class="line">deploy:  </div><div class="line">  <span class="built_in">type</span>: git</div><div class="line">  repository: http://github.com/yourname/screetBloom.github.io.git</div><div class="line">  branch: master</div><div class="line">保存后，然后在当前文件夹打开Git Bash Here</div><div class="line"></div><div class="line">```bash</div><div class="line">hexo g</div></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">hexo s</div></pre></td></tr></table></figure>
+<p>这时候在浏览器输入<a href="http://localhost:4000/" target="_blank" rel="external">http://localhost:4000/</a> 就可以看到hexo已经成功生成了博客(目前还是本地).</p>
+<h3 id="7、配置Hexo到Github"><a href="#7、配置Hexo到Github" class="headerlink" title="7、配置Hexo到Github"></a>7、配置Hexo到Github</h3><p>找到我们刚刚创建的文件夹(如D:\selfBlog\hexo)，在里面找到_config.yml文件，用notepad++打开，直接拖到最后，可以看到</p>
+<p>deploy:<br>  type:<br>改成以下，特别注意，在：的后面是有一个空格的，不然可能出错的，其中screetBloom即在github上面的用户名</p>
+<p>deploy:<br>  type: git<br>  repository: <a href="http://github.com/yourname/screetBloom.github.io.git" target="_blank" rel="external">http://github.com/yourname/screetBloom.github.io.git</a><br>  branch: master<br>保存后，然后在当前文件夹打开Git Bash Here</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">hexo g</div></pre></td></tr></table></figure>
 <pre><code class="bash">hexo d
 </code></pre>
 <p>如果出现以下异常</p>

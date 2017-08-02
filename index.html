@@ -243,7 +243,7 @@
 <h2 id="Quick-Build-On-Windows"><a href="#Quick-Build-On-Windows" class="headerlink" title="Quick Build On Windows"></a>Quick Build On Windows</h2><h3 id="1、安装Git"><a href="#1、安装Git" class="headerlink" title="1、安装Git"></a>1、安装Git</h3><p>下载Windows下的Git客户端并安装，安装很简单，基本一路Next下去。安装完成右击任何地方出现这个<br><img src="/img/git.png" alt="Alt text"></p>
 <h3 id="2、安装Node-js"><a href="#2、安装Node-js" class="headerlink" title="2、安装Node.js"></a>2、安装Node.js</h3><p>下载Node.js，安装Node.js也是一路Next下去。CMD输入 检测成功与否<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">node -v</div></pre></td></tr></table></figure></p>
 <p><img src="/img/node.png" alt="Alt text"></p>
-<h3 id="3、Github配置"><a href="#3、Github配置" class="headerlink" title="3、Github配置"></a>3、Github配置</h3><p>Github账号注册，登陆过后点击new repository，Repository name填写自己的名称 + .github.io，<br>例如（screetBloom.github.io，screetBloom就是你的github账号的名称）（<a href="https://github.com/screetBloom" target="_blank" rel="external">我的Github</a>)</p>
+<h3 id="3、Github注册个人站点"><a href="#3、Github注册个人站点" class="headerlink" title="3、Github注册个人站点"></a>3、Github注册个人站点</h3><p>Github账号注册，登陆过后点击new repository，Repository name填写自己的名称 + .github.io，<br>例如（screetBloom.github.io，screetBloom就是你的github账号的名称）（<a href="https://github.com/screetBloom" target="_blank" rel="external">我的Github</a>)</p>
 <p><img src="/img/reposity.png" alt="Alt text"></p>
 <p>然后直接点Create repository就可以了。</p>
 <h3 id="4、配置Github-SSH密钥-主要是保证这台电脑可以向github上传代码"><a href="#4、配置Github-SSH密钥-主要是保证这台电脑可以向github上传代码" class="headerlink" title="4、配置Github SSH密钥(主要是保证这台电脑可以向github上传代码)"></a>4、配置Github SSH密钥(主要是保证这台电脑可以向github上传代码)</h3><p>首先在桌面空白处鼠标右键选择Git Bash Here<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">ssh-keygen -t rsa -C <span class="string">"15306225869@163."</span></div></pre></td></tr></table></figure></p>
@@ -252,7 +252,25 @@
 <p>登录github，点击头像可以看到setting选项，点击进入<br>然后可以看到左边有一个SSH and GPG keys选项<br>点击就可以看到以下界面，点击New SSH,复制到key里</p>
 <p><img src="/img/sshGit.png" alt="Alt text"></p>
 <p>这里的Title随便填写（主要是等你以后添加的ssh多了，方便你自己辨别这个名字是什么时候因为什么添加的，如果你有8台电脑每台都想发博客，那就8个ssh），主要是为了方便管理密钥<br>然后把刚刚拷贝的内容粘贴到Key里面去<br>然后点击Add SSH key<br>到此，Github上面的SSH配置就算完成了</p>
-<h3 id="5、创建本地仓库与Github同步"><a href="#5、创建本地仓库与Github同步" class="headerlink" title="5、创建本地仓库与Github同步"></a>5、创建本地仓库与Github同步</h3><p>首先是在本地的任意一个分区创建一个任意的文件夹，路径中最好不要用中文.<br>然后进入到刚刚创建的文件夹，右键，然后点击Git Bash Here</p>
+<h3 id="5、创建本地仓库与Github同步"><a href="#5、创建本地仓库与Github同步" class="headerlink" title="5、创建本地仓库与Github同步"></a>5、创建本地仓库与Github同步</h3><p>首先是在本地的任意一个分区创建一个任意的文件夹（如D:\selfBlog\hexo ），路径中最好不要用中文.<br>然后进入到刚刚创建的文件夹（D:\selfBlog\hexo），右键，然后点击Git Bash Here</p>
+<p><img src="/img/git.png" alt="Alt text"></p>
+<p>依次输入以下命令<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git init</div></pre></td></tr></table></figure></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git config --global user.name <span class="string">"screetBloom"</span></div></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git config --global user.email <span class="string">"15306225869@163.com"</span></div></pre></td></tr></table></figure>
+<p>其中的”screetBloom”替换成你的名称，”15306225869@163.com”替换成你的邮件地址即可</p>
+<h3 id="6、安装Hexo"><a href="#6、安装Hexo" class="headerlink" title="6、安装Hexo"></a>6、安装Hexo</h3><h4 id="（1）-全局安装hexo脚手架"><a href="#（1）-全局安装hexo脚手架" class="headerlink" title="（1）.全局安装hexo脚手架"></a>（1）.全局安装hexo脚手架</h4><p>CMD和在桌面空白地方右击“Git Bash Here”都可以<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm install -g hexo-cli</div></pre></td></tr></table></figure></p>
+<p>敲完回车后，耐心等下载安装包结束<br>安装成功后，可以输入以下命令测试以下Hexo是否安装成功<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">hexo version</div></pre></td></tr></table></figure></p>
+<p>如果能看到hexo的版本号信息，就表示安装成功了<br>接下来，进入到我们刚刚创建的文件夹(如D:\selfBlog\hexo)，右键打开Git Bash Here<br>然后依次输入以下命令<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">hexo init</div></pre></td></tr></table></figure></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm install</div></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">hexo g</div></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line">hexo s</div><div class="line">``` </div><div class="line">这时候在浏览器输入http://localhost:4000/ 就可以看到hexo已经成功生成了博客(这是本地).</div><div class="line"></div><div class="line"></div><div class="line"><span class="comment">### 7、配置Hexo到Github</span></div><div class="line"></div><div class="line">找到我们刚刚创建的文件夹(如D:\selfBlog\hexo)，在里面找到_config.yml文件，用notepad++打开，直接拖到最后，可以看到</div><div class="line"></div><div class="line">deploy:</div><div class="line">  <span class="built_in">type</span>:</div><div class="line">改成以下，特别注意，在：的后面是有一个空格的，不然可能出错的，其中screetBloom即在github上面的用户名</div><div class="line"></div><div class="line">deploy:  </div><div class="line">  <span class="built_in">type</span>: git</div><div class="line">  repository: http://github.com/yourname/screetBloom.github.io.git</div><div class="line">  branch: master</div><div class="line">保存后，然后在当前文件夹打开Git Bash Here</div><div class="line"></div><div class="line">```bash</div><div class="line">hexo g</div></pre></td></tr></table></figure>
+<pre><code class="bash">hexo d
+</code></pre>
+<p>如果出现以下异常</p>
+<p>ERROR Deployer not found: git<br>尝试输入以下命令，然后重新执行刚刚的两条命令</p>
+<pre><code class="bash">npm install hexo-deployer-git --save
+</code></pre>
+<p>这时候如果弹出一个对话框，输入在guthub上面的用户名和密码即可<br>这时候我们就可以在浏览器输入”screetBloom.github.io”（screetBloom替换成github上的名称）就可以看到博客已经搭建成功了。</p>
 
       
 

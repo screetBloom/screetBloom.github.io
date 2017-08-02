@@ -175,8 +175,10 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p><img src="http://7xl4c6.com1.z0.glb.clouddn.com/Fgyrw2b0miPMVrvIxNmZV16S9dDL" alt="Alt text"><br>用canvas实现简易画板工具<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div></pre></td><td class="code"><pre><div class="line">&lt;!DOCTYPE html&gt;</div><div class="line">&lt;html lang=<span class="string">"en"</span>&gt;</div><div class="line">&lt;head&gt;</div><div class="line">    &lt;meta charset=<span class="string">"UTF-8"</span>&gt;</div><div class="line">    &lt;title&gt;涂鸦&lt;/title&gt;</div><div class="line">    &lt;style&gt;</div><div class="line">        <span class="comment">#canvas1&#123;</span></div><div class="line">            box-shadow: 0 5px 40px black;</div><div class="line">        &#125;</div><div class="line">    &lt;/style&gt;</div><div class="line">&lt;/head&gt;</div><div class="line">&lt;body&gt;</div><div class="line">&lt;canvas id=<span class="string">"canvas1"</span> width=<span class="string">"2000px"</span> height=<span class="string">"1000px"</span>&gt;&lt;/canvas&gt;</div><div class="line">&lt;/body&gt;</div><div class="line">&lt;script&gt;</div><div class="line">    var canvas = document.getElementById(<span class="string">'canvas1'</span>);</div><div class="line"></div><div class="line">    var context = canvas.getContext(<span class="string">'2d'</span>)</div><div class="line"></div><div class="line">    canvas.onmousedown = <span class="keyword">function</span> (e) &#123;</div><div class="line"></div><div class="line">        var ev = e||window.event;</div><div class="line"></div><div class="line">        var x = ev.clientX - canvas.offsetLeft;</div><div class="line">        var y = ev.clientY - canvas.offsetTop;</div><div class="line"></div><div class="line">        context.beginPath();</div><div class="line">        context.moveTo(x,y);</div><div class="line"></div><div class="line">        canvas.onmousemove = <span class="keyword">function</span> (e) &#123;</div><div class="line">            var ev = e||window.event;</div><div class="line">            var x = ev.clientX - canvas.offsetLeft;</div><div class="line">            var y = ev.clientY - canvas.offsetTop;</div><div class="line">            console.log(x)</div><div class="line">            context.lineWidth = 5;</div><div class="line">            context.strokeStyle = <span class="string">"red"</span>;</div><div class="line"></div><div class="line">            context.lineTo(x,y);</div><div class="line">            context.stroke()</div><div class="line">        &#125;</div><div class="line">        canvas.onmouseup = <span class="function"><span class="title">function</span></span> () &#123;</div><div class="line">            canvas.onmousemove = null;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">&lt;/script&gt;</div><div class="line">&lt;/html&gt;</div></pre></td></tr></table></figure></p>
-
+        <p><img src="http://7xl4c6.com1.z0.glb.clouddn.com/Fgyrw2b0miPMVrvIxNmZV16S9dDL" alt="Alt text"><br>
+        
+          <a class="article-more-a" href="/2017/08/01/canvas上路/#more">more >></a>
+        
       
 
       
@@ -240,72 +242,10 @@
       
         <p>if you prefer to Hexo Official website,click <a href="https://hexo.io/" target="_blank" rel="external">Here</a>! And check <a href="https://hexo.io/docs/" target="_blank" rel="external">Official documentation</a> for more info.  If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/screetBloom" target="_blank" rel="external">GitHub</a>.</p>
 <p>Now  ,let us to do it ! </p>
-<h2 id="Quick-Build-On-Windows"><a href="#Quick-Build-On-Windows" class="headerlink" title="Quick Build On Windows"></a>Quick Build On Windows</h2><h3 id="1、安装Git"><a href="#1、安装Git" class="headerlink" title="1、安装Git"></a>1、安装Git</h3><p>下载Windows下的Git客户端并安装，安装很简单，基本一路Next下去。安装完成右击任何地方出现这个<br><img src="/img/git.png" alt="Alt text"></p>
-<h3 id="2、安装Node-js"><a href="#2、安装Node-js" class="headerlink" title="2、安装Node.js"></a>2、安装Node.js</h3><p>下载Node.js，安装Node.js也是一路Next下去。CMD输入 检测成功与否<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">node -v</div></pre></td></tr></table></figure></p>
-<p><img src="/img/node.png" alt="Alt text"></p>
-<h3 id="3、Github注册个人站点"><a href="#3、Github注册个人站点" class="headerlink" title="3、Github注册个人站点"></a>3、Github注册个人站点</h3><p>Github账号注册，登陆过后点击new repository，Repository name填写自己的名称 + .github.io，<br>例如（screetBloom.github.io，screetBloom就是你的github账号的名称）（<a href="https://github.com/screetBloom" target="_blank" rel="external">我的Github</a>)</p>
-<p><img src="http://7xl4c6.com1.z0.glb.clouddn.com/Fo7qt-Vi7bOBhpTv1GljT0hD2RJc" alt="Alt text"></p>
-<p>然后直接点Create repository就可以了。</p>
-<h3 id="4、配置Github-SSH密钥-主要是保证这台电脑可以向github上传代码"><a href="#4、配置Github-SSH密钥-主要是保证这台电脑可以向github上传代码" class="headerlink" title="4、配置Github SSH密钥(主要是保证这台电脑可以向github上传代码)"></a>4、配置Github SSH密钥(主要是保证这台电脑可以向github上传代码)</h3><p>首先在桌面空白处鼠标右键选择Git Bash Here<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">ssh-keygen -t rsa -C <span class="string">"15306225869@163."</span></div></pre></td></tr></table></figure></p>
-<p><img src="/img/ssh.png" alt="Alt text"></p>
-<p>引号里面的内容输入你的邮箱地址，然后回车，会提示你文件保存的路径，这时候按回车键确认.<br>（桌面上如果生成了同下文件名的两个文件，没什么关系）<br>然后会提示你输入密码，输入即可（输入密码是看不到的），然后会确认输入一次，就可以在C:\Users\Administrator（如我的C:\用户.ssh）看到生成了两个文件，一个是id_rsa，另一个是id_rsa.pub，用notepadd++(记事本，下同)打开id_rsa.pub然后选中里面的全部内容，复制下来。</p>
-<p>登录github，点击头像可以看到setting选项，点击进入<br>然后可以看到左边有一个SSH and GPG keys选项<br>点击就可以看到以下界面，点击New SSH,复制到key里</p>
-<p><img src="http://7xl4c6.com1.z0.glb.clouddn.com/FkIRlEVSJuV8A4CylhdURy8Mk8vH" alt="Alt text"></p>
-<p>这里的Title随便填写（主要是等你以后添加的ssh多了，方便你自己辨别这个名字是什么时候因为什么添加的，如果你有8台电脑每台都想发博客，那就8个ssh），主要是为了方便管理密钥<br>然后把刚刚拷贝的内容粘贴到Key里面去<br>然后点击Add SSH key<br>到此，Github上面的SSH配置就算完成了</p>
-<h3 id="5、创建本地仓库与Github同步"><a href="#5、创建本地仓库与Github同步" class="headerlink" title="5、创建本地仓库与Github同步"></a>5、创建本地仓库与Github同步</h3><p>首先是在本地的任意一个分区创建一个任意的文件夹（如D:\selfBlog\hexo ），路径中最好不要用中文.<br>然后进入到刚刚创建的文件夹（D:\selfBlog\hexo），右键，然后点击Git Bash Here</p>
-<p><img src="/img/git.png" alt="Alt text"></p>
-<p>依次输入以下命令<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git init</div></pre></td></tr></table></figure></p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git config --global user.name <span class="string">"screetBloom"</span></div></pre></td></tr></table></figure>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git config --global user.email <span class="string">"15306225869@163.com"</span></div></pre></td></tr></table></figure>
-<p>其中的”screetBloom”替换成你的名称，”15306225869@163.com”替换成你的邮件地址即可</p>
-<h3 id="6、安装Hexo"><a href="#6、安装Hexo" class="headerlink" title="6、安装Hexo"></a>6、安装Hexo</h3><p>全局安装hexo脚手架<br>CMD和在桌面空白地方右击“Git Bash Here”都可以<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm install -g hexo-cli</div></pre></td></tr></table></figure></p>
-<p>敲完回车后，耐心等下载安装包结束<br>安装成功后，可以输入以下命令测试以下Hexo是否安装成功<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">hexo version</div></pre></td></tr></table></figure></p>
-<p>如果能看到hexo的版本号信息，就表示安装成功了<br>接下来，进入到我们刚刚创建的文件夹(如D:\selfBlog\hexo)，右键打开Git Bash Here<br>然后依次输入以下命令<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">hexo init</div></pre></td></tr></table></figure></p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm install</div></pre></td></tr></table></figure>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">hexo g</div></pre></td></tr></table></figure>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">hexo s</div></pre></td></tr></table></figure>
-<p>这时候在浏览器输入<a href="http://localhost:4000/" target="_blank" rel="external">http://localhost:4000/</a> 就可以看到hexo已经成功生成了博客(目前还是本地).<br><img src="/img/LAND.jpg" alt="Alt text"></p>
-<h3 id="7、配置Hexo到Github"><a href="#7、配置Hexo到Github" class="headerlink" title="7、配置Hexo到Github"></a>7、配置Hexo到Github</h3><p>找到我们刚刚创建的文件夹(如D:\selfBlog\hexo)，在里面找到_config.yml文件，用notepad++打开，直接拖到最后，可以看到</p>
-<p>deploy:<br>  type:<br>改成以下，特别注意，在：的后面是有一个空格的，不然可能出错的，其中screetBloom即在github上面的用户名</p>
-<p>deploy:<br>  type: git<br>  repository: <a href="http://github.com/yourname/screetBloom.github.io.git" target="_blank" rel="external">http://github.com/yourname/screetBloom.github.io.git</a><br>  branch: master<br>保存后，然后在当前文件夹打开Git Bash Here</p>
-<pre><code class="bash">hexo g
-</code></pre>
-<pre><code class="bash">hexo d
-</code></pre>
-<p>如果出现以下异常</p>
-<p>ERROR Deployer not found: git<br>尝试输入以下命令，然后重新执行刚刚的两条命令</p>
-<pre><code class="bash">npm install hexo-deployer-git --save
-</code></pre>
-<pre><code class="bash">hexo g
-</code></pre>
-<pre><code class="bash">hexo d
-</code></pre>
-<p>这时候如果弹出一个对话框，输入在guthub上面的用户名和密码即可<br>这时候我们就可以在浏览器输入”screetBloom.github.io”（screetBloom替换成github上的名称）就可以看到博客已经搭建成功了。</p>
-<h3 id="8、修改主题（此处以Yilia为例）"><a href="#8、修改主题（此处以Yilia为例）" class="headerlink" title="8、修改主题（此处以Yilia为例）"></a>8、修改主题（此处以Yilia为例）</h3><p>找到我们刚刚创建的文件夹(如D:\selfBlog\hexo)，右击“Git Bash Here”</p>
-<pre><code class="bash">git <span class="built_in">clone</span> https://github.com/litten/hexo-theme-yilia.git themes/yilia
-</code></pre>
-<p>完成后，会在主题文件夹（D:\selfBlog\hexo\themes）生成主题文件lilia<br><img src="/img/theme.png" alt="Alt text"></p>
-<p>再切换回根目录（D:\selfBlog\hexo）；notepad++打开_config.yml,编辑<br>将 theme 对应的值进行修改</p>
-<p>theme: yilia</p>
-<p>接着就自动部署发布：</p>
-<pre><code class="bash">hexo clean
-</code></pre>
-<pre><code class="bash">hexo g
-</code></pre>
-<pre><code class="bash">hexo d
-</code></pre>
-<p>刷新博客主页，你想要的效果就出现了。也可以点击<a href="https://hexo.io/themes/" target="_blank" rel="external">更多主题</a>，挑选自己喜欢的主题进行修改.<br><img src="http://7xl4c6.com1.z0.glb.clouddn.com/Fm7f-yPKZnSFWiz6TtrZl0kQOKLp" alt="Alt text"></p>
-<h3 id="9、开始写博客"><a href="#9、开始写博客" class="headerlink" title="9、开始写博客"></a>9、开始写博客</h3><p>找到我们刚刚创建的文件夹(如D:\selfBlog\hexo)，右击“Git Bash Here”</p>
-<pre><code class="bash">hexo new [layout] &lt;title&gt;
-</code></pre>
-<p>layout可以不写，呈现默认layout，想要修改的话，<a href="https://hexo.io/docs/" target="_blank" rel="external">官方文档</a>.<br>打开根目录下的博客所在的目录(D:\selfBlog\hexo\source_posts)，就可以看到你刚刚生成的博客</p>
-<h3 id="9、使用一个支持markdown格式的编译器-webstorm设置，支持markdown语法"><a href="#9、使用一个支持markdown格式的编译器-webstorm设置，支持markdown语法" class="headerlink" title="9、使用一个支持markdown格式的编译器(webstorm设置，支持markdown语法)"></a>9、使用一个支持markdown格式的编译器(webstorm设置，支持markdown语法)</h3><p>因为我本身写代码比较多，因此我用的是<a href="http://www.jetbrains.com/webstorm/download/" target="_blank" rel="external">webstorm2017</a></p>
-<p>接下来就介绍一下如何入让webstorm支持markdown格式<br> File –&gt; Settings –&gt; Plugins –&gt; Install jetbrains plugin  –&gt; 搜索markdown -&gt; 下载</p>
-<p><img src="http://7xl4c6.com1.z0.glb.clouddn.com/FvPpPzo0x5oNS5LcaYIA0fNhfSLl" alt="Alt text"></p>
-<p><img src="http://7xl4c6.com1.z0.glb.clouddn.com/Ft9ukus1lxuiFp9ZCj2Aut2r0Nww" alt="Alt text"></p>
-<p>然后用webstorm打开自己new出来的博客,会呈现这个样子,如果还不行，<a href="http://www.jianshu.com/p/83739b3fc427" target="_blank" rel="external">参见这里</a></p>
-<p><img src="http://7xl4c6.com1.z0.glb.clouddn.com/FgY8PyFC9v6y1Otad_EyUynOVT34" alt="Alt text"></p>
-
+<h2 id="Quick-Build-On-Windows"><a href="#Quick-Build-On-Windows" class="headerlink" title="Quick Build On Windows"></a>Quick Build On Windows</h2><h3 id="1、安装Git"><a href="#1、安装Git" class="headerlink" title="1、安装Git"></a>1、安装Git</h3>
+        
+          <a class="article-more-a" href="/2017/08/01/hello-world/#more">more >></a>
+        
       
 
       

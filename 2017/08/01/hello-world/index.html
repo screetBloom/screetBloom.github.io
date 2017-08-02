@@ -22,7 +22,10 @@
 <meta property="og:image" content="http://yoursite.com/img/git.png">
 <meta property="og:image" content="http://yoursite.com/img/LAND.jpg">
 <meta property="og:image" content="http://yoursite.com/img/theme.png">
-<meta property="og:updated_time" content="2017-08-02T03:40:25.713Z">
+<meta property="og:image" content="http://yoursite.com/img/Yilia.png">
+<meta property="og:image" content="http://yoursite.com/img/plugin.png">
+<meta property="og:image" content="http://yoursite.com/img/mark.png">
+<meta property="og:updated_time" content="2017-08-02T05:08:42.366Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="结合github和hexo搭建个人博客的具体操作">
 <meta name="twitter:description" content="if you prefer to Hexo Official website,click Here! And check Official documentation for more info.  If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask m">
@@ -229,7 +232,7 @@
 <pre><code class="bash">hexo d
 </code></pre>
 <p>这时候如果弹出一个对话框，输入在guthub上面的用户名和密码即可<br>这时候我们就可以在浏览器输入”screetBloom.github.io”（screetBloom替换成github上的名称）就可以看到博客已经搭建成功了。</p>
-<h3 id="8、修改主题（此处以lilia为例）"><a href="#8、修改主题（此处以lilia为例）" class="headerlink" title="8、修改主题（此处以lilia为例）"></a>8、修改主题（此处以lilia为例）</h3><p>找到我们刚刚创建的文件夹(如D:\selfBlog\hexo)，右击“Git Bash Here”</p>
+<h3 id="8、修改主题（此处以Yilia为例）"><a href="#8、修改主题（此处以Yilia为例）" class="headerlink" title="8、修改主题（此处以Yilia为例）"></a>8、修改主题（此处以Yilia为例）</h3><p>找到我们刚刚创建的文件夹(如D:\selfBlog\hexo)，右击“Git Bash Here”</p>
 <pre><code class="bash">git <span class="built_in">clone</span> https://github.com/litten/hexo-theme-yilia.git themes/yilia
 </code></pre>
 <p>完成后，会在主题文件夹（D:\selfBlog\hexo\themes）生成主题文件lilia<br><img src="/img/theme.png" alt="Alt text"></p>
@@ -242,7 +245,15 @@
 </code></pre>
 <pre><code class="bash">hexo d
 </code></pre>
-<p>刷新博客主页，你想要的效果就出现了。也可以点击<a href="https://hexo.io/themes/" target="_blank" rel="external">更多主题</a>，挑选自己喜欢的主题进行修改.</p>
+<p>刷新博客主页，你想要的效果就出现了。也可以点击<a href="https://hexo.io/themes/" target="_blank" rel="external">更多主题</a>，挑选自己喜欢的主题进行修改.<br><img src="/img/Yilia.png" alt="Alt text"></p>
+<h3 id="9、开始写博客"><a href="#9、开始写博客" class="headerlink" title="9、开始写博客"></a>9、开始写博客</h3><p>找到我们刚刚创建的文件夹(如D:\selfBlog\hexo)，右击“Git Bash Here”</p>
+<pre><code class="bash">hexo new [layout] &lt;title&gt;
+</code></pre>
+<p>layout可以不写，呈现默认layout，想要修改的话，<a href="https://hexo.io/docs/" target="_blank" rel="external">官方文档</a>.<br>打开根目录下的博客所在的目录(D:\selfBlog\hexo\source_posts)，就可以看到你刚刚生成的博客</p>
+<h3 id="9、使用一个支持markdown格式的编译器-webstorm设置，支持markdown语法"><a href="#9、使用一个支持markdown格式的编译器-webstorm设置，支持markdown语法" class="headerlink" title="9、使用一个支持markdown格式的编译器(webstorm设置，支持markdown语法)"></a>9、使用一个支持markdown格式的编译器(webstorm设置，支持markdown语法)</h3><p>因为我本身写代码比较多，因此我用的是<a href="http://www.jetbrains.com/webstorm/download/" target="_blank" rel="external">webstorm2017</a></p>
+<p>接下来就介绍一下如何入让webstorm支持markdown格式<br> File –&gt; Settings –&gt; Plugins –&gt; Install jetbrains plugin  –&gt; 搜索markdown -&gt; 下载</p>
+<p><img src="/img/plugin.png" alt="Alt text"></p>
+<p><img src="/img/mark.png" alt="Alt text"></p>
 
       
 

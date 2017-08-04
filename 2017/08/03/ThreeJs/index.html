@@ -21,9 +21,14 @@
 <meta property="og:image" content="http://7xl4c6.com1.z0.glb.clouddn.com/FgecZ3WrczOiY1D3dxcC8tjzJr7p">
 <meta property="og:image" content="http://7xl4c6.com1.z0.glb.clouddn.com/Ft8XPkHMmBIiYRWXPci0Gv930UDZ">
 <meta property="og:image" content="http://7xl4c6.com1.z0.glb.clouddn.com/FvQ9UOSkwadPFuhKWFjIAJC1MeHG">
+<meta property="og:image" content="http://7xl4c6.com1.z0.glb.clouddn.com/FhijxAwrpz1LN5ZTbB3HpgYhlCvc">
+<meta property="og:image" content="http://7xl4c6.com1.z0.glb.clouddn.com/FpyCSmPaIf2GiXpOL-7ClYZuDr5_">
+<meta property="og:image" content="http://7xl4c6.com1.z0.glb.clouddn.com/Fiy4s639p-T-UjRPcvqmxGI7HDXc">
+<meta property="og:image" content="http://7xl4c6.com1.z0.glb.clouddn.com/FhGghpA-3O_GPw2NeXJnKtS2CESv">
+<meta property="og:image" content="http://7xl4c6.com1.z0.glb.clouddn.com/Fiw02y1Cy1TSs0Q17NoXBsASvwhq">
 <meta property="og:image" content="http://7xl4c6.com1.z0.glb.clouddn.com/FhK_YpzoELC1t066F7avCGe6SleC">
 <meta property="og:image" content="http://7xl4c6.com1.z0.glb.clouddn.com/FolosEe2Dg0PjSVUlgXHw0wq-UUQ">
-<meta property="og:updated_time" content="2017-08-04T07:49:02.441Z">
+<meta property="og:updated_time" content="2017-08-04T09:26:39.185Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="three.js">
 <meta name="twitter:description" content="理解ThreeJs 1、下载three.js, 并在页面引用如果你找不到合适的下载地址的话，可以看看这个CDN，Here,如果想要下载的话，拷贝CDN地址直接URL打开网页，复制原代码.官网看这里;官网例子看这里。有一点需要注意，three.js版本很多，同样的代码可能会产生差异的效果，也可能因为代码和js版本不一致而出不来效果。">
@@ -220,8 +225,25 @@
 <p>这次不如上次明显，但是还是变小了，这是为什么呢？<br>虽然正方体的实际大小并未改变,camera的位置也没变，但是将camera的竖直张角设置得更大时，视角变大了，因而正方体相对于整个视角的大小就变小了，看起来正方形就显得变小了。</p>
 <p><img src="http://7xl4c6.com1.z0.glb.clouddn.com/FvQ9UOSkwadPFuhKWFjIAJC1MeHG" alt="Alt text"></p>
 <h3 id="4-正式开始-从基本立方体和球入手"><a href="#4-正式开始-从基本立方体和球入手" class="headerlink" title="4.正式开始(从基本立方体和球入手)"></a>4.正式开始(从基本立方体和球入手)</h3><p>如果说概念的话，最最基本的入门概念到这里就差不多了，接下来的贴图，旋转，动画，导入等等都是这个概念框架上的理解（我学的也不深）<br>但是我就到这里结束的话，你肯定会说，ntm，老子用个css3，一个幕布黑色，一个红色长方形，要你这么多代码吗？threejs就这点作用的话，有什么用？</p>
-<p>其实，刚刚我们的代码就是一个长方体，还记得我们设置的长宽高吗，长方形怎么会有三维呢！</p>
-<p><img src="http://7xl4c6.com1.z0.glb.clouddn.com/FhK_YpzoELC1t066F7avCGe6SleC" alt="Alt text"></p>
+<p>其实，刚刚我们的代码就是一个长方体，还记得我们设置的长宽高吗，长方形怎么会有三维呢！<br>其实是因为camera就是我们的眼睛，我们被一个长方体的一个面给遮住了所有视野，它其实依然还是一个立方体，只是现在我们看不到而已，那么，我们就来看看这个立方体。</p>
+<p>加上这句<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">//创建一个 x、y、z方向为 1、2、3,颜色为 红色</div><div class="line">        var cube = new THREE.Mesh(new THREE.CubeGeometry(1, 2, 3),</div><div class="line">            new THREE.MeshBasicMaterial(&#123;</div><div class="line">            color: 0xff0000,</div><div class="line">            wireframe: <span class="literal">true</span>     //这里这句，要加</div><div class="line">            &#125;)</div><div class="line">        );</div><div class="line">        scene.add(cube);</div></pre></td></tr></table></figure></p>
+<p>这句话的意思是说，只用把边的颜色涂一下就可以了，不要涂整个面.</p>
+<p><img src="http://7xl4c6.com1.z0.glb.clouddn.com/FhijxAwrpz1LN5ZTbB3HpgYhlCvc" alt="Alt text"></p>
+<p>如果你有图形图像的基础的话，应该已经看出来了。因为在前面我们选的是透视投影的camera,所以这个就是长方体的透视图，只是不够明显而已。</p>
+<p>那么现在我们再来好好看看，明确的让大家看出来它是一个长方体。</p>
+<p>首先，给长方体进行多重的面切割（这样是为了在不对6个面进行涂色的情况下，好看出来它的轮廓）<br>由原本的定义长方体，加一句：</p>
+<p>从原本的这样：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">//创建一个 x、y、z方向为 1、2、3,颜色为 红色</div><div class="line">        var cube = new THREE.Mesh(new THREE.CubeGeometry(1, 2, 3),</div><div class="line">            new THREE.MeshBasicMaterial(&#123;</div><div class="line">            color: 0xff0000,</div><div class="line">            wireframe: <span class="literal">true</span>     //这里这句，要加</div><div class="line">            &#125;)</div><div class="line">        );</div><div class="line">        scene.add(cube);</div></pre></td></tr></table></figure></p>
+<p>变成这样:<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">//创建一个 x、y、z方向为 1、2、3,颜色为 红色</div><div class="line">       var cube = new THREE.Mesh(new THREE.CubeGeometry(1, 2, 3,20,20,30),   </div><div class="line">       //后面加上了 20,20,30,x轴的两面都切割20份，y轴的两面都切割20份，z轴的两面都切割成30份</div><div class="line">           new THREE.MeshBasicMaterial(&#123;</div><div class="line">               color: 0xff0000,</div><div class="line">               wireframe: <span class="literal">true</span></div><div class="line">           &#125;)</div><div class="line">       );</div><div class="line">       scene.add(cube);</div></pre></td></tr></table></figure></p>
+<p>效果图：<br><img src="http://7xl4c6.com1.z0.glb.clouddn.com/FpyCSmPaIf2GiXpOL-7ClYZuDr5_" alt="Alt text"></p>
+<p>现在大致上可以看出来立方体的结构了，那我们现在再进一步，将立方体旋转过来看，直接验证是不是。<br>在定义相机这里，改变我们camera的位置，来达到旋转立方体的效果.<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">  //定义相机  camera</div><div class="line">var camera = new THREE.PerspectiveCamera(45, 4 / 3, 1, 1000);</div><div class="line">camera.position.set(-2, -4, 5);</div><div class="line">scene.add(camera);</div></pre></td></tr></table></figure></p>
+<p>但是单纯这样的话，你会发现现在整个立方体看不到了。因为我们位置移动了，camera移动走了，但是没有注释着立方体，相当于：</p>
+<p><img src="http://7xl4c6.com1.z0.glb.clouddn.com/Fiy4s639p-T-UjRPcvqmxGI7HDXc" alt="Alt text"></p>
+<p>变成了：</p>
+<p><img src="http://7xl4c6.com1.z0.glb.clouddn.com/FhGghpA-3O_GPw2NeXJnKtS2CESv" alt="Alt text"></p>
+<p>自然就看不到了。所以加上这句：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">camera.lookAt(new THREE.Vector3(0, 0, 0));</div></pre></td></tr></table></figure></p>
+<p>意思就是。眼睛虽然移动了，但是还要看着原点，也就是物体绘制的地方。<br>效果如下：</p>
+<p><img src="http://7xl4c6.com1.z0.glb.clouddn.com/Fiw02y1Cy1TSs0Q17NoXBsASvwhq" alt="Alt text"></p>
+<h4 id="球（为开始的那个旋转的地球做准备）"><a href="#球（为开始的那个旋转的地球做准备）" class="headerlink" title="球（为开始的那个旋转的地球做准备）"></a>球（为开始的那个旋转的地球做准备）</h4><p><img src="http://7xl4c6.com1.z0.glb.clouddn.com/FhK_YpzoELC1t066F7avCGe6SleC" alt="Alt text"></p>
 <p><img src="http://7xl4c6.com1.z0.glb.clouddn.com/FolosEe2Dg0PjSVUlgXHw0wq-UUQ" alt="Alt text"></p>
 <p>PS. 如果你需要渲染的图片素材的话，<a href="http://7xl4c6.com1.z0.glb.clouddn.com/FricREXutNVP2VRPBJ9KsJ7j_eIY" target="_blank" rel="external">点这里</a></p>
 

@@ -6,19 +6,18 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>webSocket在具体项目中的使用 | ChenWe的博客</title>
+  <title>ChenWe的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="引言&amp;emsp;&amp;emsp;这里对webSocket进行简单的使用，不进行过多的介绍.&amp;emsp;&amp;emsp;这里有用简单node实现的websocket服务端，也进行了简单的介绍，主要是为了方便部分人，搭建自己的小demo尝试效果.">
-<meta name="keywords" content="webSocket">
+  <meta name="description" content="title: webSocket在具体项目中的使用date: 2017-08-29 12:07:28 tags: webSocket引言&amp;emsp;&amp;emsp;这里对webSocket进行简单的使用，不进行过多的介绍.&amp;emsp;&amp;emsp;这里有用简单node实现的websocket服务端，也进行了简单的介绍，主要是为了方便部分人，搭建自己的小demo尝试效果.">
 <meta property="og:type" content="article">
-<meta property="og:title" content="webSocket在具体项目中的使用">
+<meta property="og:title" content="ChenWe的博客">
 <meta property="og:url" content="http://yoursite.com/2017/08/29/webSocket/index.html">
 <meta property="og:site_name" content="ChenWe的博客">
-<meta property="og:description" content="引言&amp;emsp;&amp;emsp;这里对webSocket进行简单的使用，不进行过多的介绍.&amp;emsp;&amp;emsp;这里有用简单node实现的websocket服务端，也进行了简单的介绍，主要是为了方便部分人，搭建自己的小demo尝试效果.">
-<meta property="og:updated_time" content="2017-08-29T04:23:07.321Z">
+<meta property="og:description" content="title: webSocket在具体项目中的使用date: 2017-08-29 12:07:28 tags: webSocket引言&amp;emsp;&amp;emsp;这里对webSocket进行简单的使用，不进行过多的介绍.&amp;emsp;&amp;emsp;这里有用简单node实现的websocket服务端，也进行了简单的介绍，主要是为了方便部分人，搭建自己的小demo尝试效果.">
+<meta property="og:updated_time" content="2017-08-29T05:01:50.389Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="webSocket在具体项目中的使用">
-<meta name="twitter:description" content="引言&amp;emsp;&amp;emsp;这里对webSocket进行简单的使用，不进行过多的介绍.&amp;emsp;&amp;emsp;这里有用简单node实现的websocket服务端，也进行了简单的介绍，主要是为了方便部分人，搭建自己的小demo尝试效果.">
+<meta name="twitter:title" content="ChenWe的博客">
+<meta name="twitter:description" content="title: webSocket在具体项目中的使用date: 2017-08-29 12:07:28 tags: webSocket引言&amp;emsp;&amp;emsp;这里对webSocket进行简单的使用，不进行过多的介绍.&amp;emsp;&amp;emsp;这里有用简单node实现的websocket服务端，也进行了简单的介绍，主要是为了方便部分人，搭建自己的小demo尝试效果.">
   
     <link rel="alternative" href="/atom.xml" title="ChenWe的博客" type="application/atom+xml">
   
@@ -161,24 +160,11 @@
             <article id="post-webSocket" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
-      <header class="article-header">
-        
-  
-    <h1 class="article-title" itemprop="name">
-      webSocket在具体项目中的使用
-    </h1>
-  
-
-        
-        <a href="/2017/08/29/webSocket/" class="archive-article-date">
-  	<time datetime="2017-08-29T04:07:28.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-08-29</time>
-</a>
-        
-      </header>
-    
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="引言"><a href="#引言" class="headerlink" title="引言"></a>引言</h2><p>&emsp;&emsp;这里对webSocket进行简单的使用，不进行过多的介绍.<br>&emsp;&emsp;这里有用简单node实现的websocket服务端，也进行了简单的介绍，主要是为了方便部分人，搭建自己的小demo尝试效果.</p>
+        <hr>
+<p>title: webSocket在具体项目中的使用<br>date: 2017-08-29 12:07:28</p>
+<h2 id="tags-webSocket"><a href="#tags-webSocket" class="headerlink" title="tags: webSocket"></a>tags: webSocket</h2><h2 id="引言"><a href="#引言" class="headerlink" title="引言"></a>引言</h2><p>&emsp;&emsp;这里对webSocket进行简单的使用，不进行过多的介绍.<br>&emsp;&emsp;这里有用简单node实现的websocket服务端，也进行了简单的介绍，主要是为了方便部分人，搭建自己的小demo尝试效果.</p>
 <a id="more"></a>
 <p>&emsp;&emsp;就前端而言，在具体的项目中，后端可能由很多可能的其他的语言开发，含.net、java、C#等，所以一般来说我们只需要关注Client端就行了，能够按照后端的数据格式发送数据，按照返回的数据格式来完成前端的交互.<br>&emsp;&emsp;但对我们上手webSocket来说，前后端一起搭建比较有一个直观的效果.<br>&emsp;&emsp;代码都比较简单直观，但是都是可以用的，困难之处在于如何将这个前端client代码嵌入自己的项目中，满足具体的需求</p>
 <h2 id="1-client端代码，主要由前端负责"><a href="#1-client端代码，主要由前端负责" class="headerlink" title="1.client端代码，主要由前端负责"></a>1.client端代码，主要由前端负责</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div></pre></td><td class="code"><pre><div class="line">&lt;!DOCTYPE html&gt;</div><div class="line">&lt;html lang=<span class="string">"en"</span>&gt;</div><div class="line">&lt;head&gt;</div><div class="line">    &lt;meta charset=<span class="string">"UTF-8"</span>&gt;</div><div class="line">    &lt;title&gt;websocket客户端&lt;/title&gt;</div><div class="line">    &lt;script <span class="built_in">type</span>=<span class="string">"text/javascript"</span>&gt;</div><div class="line">        <span class="keyword">function</span> WebSocketTest()</div><div class="line">        &#123;</div><div class="line">            <span class="keyword">if</span> (<span class="string">"WebSocket"</span> <span class="keyword">in</span> window)</div><div class="line">            &#123;</div><div class="line">                console.log(<span class="string">"您的浏览器支持 WebSocket!"</span>);</div><div class="line"></div><div class="line">                // 打开一个 web socket</div><div class="line">                var ws = new WebSocket(<span class="string">"ws:/10.101.68.56:9000"</span>);</div><div class="line"></div><div class="line">                ws.onopen = <span class="keyword">function</span>()</div><div class="line">                &#123;</div><div class="line">                    // Web Socket 已连接上，使用 send() 方法发送数据</div><div class="line">                    ws.send(<span class="string">"发送数据"</span>);</div><div class="line">                    console.log(<span class="string">"数据发送中..."</span>);</div><div class="line">                &#125;;</div><div class="line"></div><div class="line">                ws.onmessage = <span class="keyword">function</span> (evt)</div><div class="line">                &#123;</div><div class="line">                    var received_msg = evt.data;</div><div class="line">                    console.log(<span class="string">"数据已接收..."</span>);</div><div class="line">                    console.log(received_msg);</div><div class="line">                &#125;;</div><div class="line"></div><div class="line">                ws.onclose = <span class="keyword">function</span>()</div><div class="line">                &#123;</div><div class="line">                    // 关闭 websocket</div><div class="line">                    console.log(<span class="string">"连接已关闭..."</span>);</div><div class="line">                &#125;;</div><div class="line">            &#125;</div><div class="line"></div><div class="line">            <span class="keyword">else</span></div><div class="line">            &#123;</div><div class="line">                // 浏览器不支持 WebSocket</div><div class="line">                console.log(<span class="string">"您的浏览器不支持 WebSocket!"</span>);</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">    &lt;/script&gt;</div><div class="line">&lt;/head&gt;</div><div class="line">&lt;body&gt;</div><div class="line">&lt;div id=<span class="string">"sse"</span>&gt;</div><div class="line">    &lt;a href=<span class="string">"javascript:WebSocketTest()"</span>&gt;运行 WebSocket&lt;/a&gt;</div><div class="line">&lt;/div&gt;</div><div class="line">&lt;/body&gt;</div><div class="line">&lt;/html&gt;</div></pre></td></tr></table></figure>
@@ -217,17 +203,6 @@
     <div class="article-info article-info-index">
       
       
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">webSocket</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
       
 
       
@@ -291,6 +266,15 @@
 
   
 <nav id="article-nav">
+  
+    <a href="/2017/08/31/js生成数据库date/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          js生成数据库date
+        
+      </div>
+    </a>
   
   
     <a href="/2017/08/22/my20170822/" id="article-nav-older" class="article-nav-link-wrap">

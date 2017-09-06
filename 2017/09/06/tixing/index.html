@@ -6,15 +6,21 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://screetbloom.github.io">
-  <title>tixing | ChenWe的博客</title>
+  <title>每天流程备忘提醒 | ChenWe的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="article">
-<meta property="og:title" content="tixing">
+  <meta name="description" content="本篇主要是利用python写一个办公室备忘提醒，比如间隔多长时间我需要去处理分配的任务，像这种需求的时候，就可以定时弹出一个windows弹框，提醒自己该去处理什么事情了. 像我本机已经安装了python,直接双击.py文件就可以了；如果想发给没有环境的人的话，那就只能封装成exe文件了.">
+<meta name="keywords" content="python,备忘提醒,GUI">
+<meta property="og:type" content="article">
+<meta property="og:title" content="每天流程备忘提醒">
 <meta property="og:url" content="https://screetbloom.github.io/2017/09/06/tixing/index.html">
 <meta property="og:site_name" content="ChenWe的博客">
-<meta property="og:updated_time" content="2017-09-06T07:22:41.183Z">
+<meta property="og:description" content="本篇主要是利用python写一个办公室备忘提醒，比如间隔多长时间我需要去处理分配的任务，像这种需求的时候，就可以定时弹出一个windows弹框，提醒自己该去处理什么事情了. 像我本机已经安装了python,直接双击.py文件就可以了；如果想发给没有环境的人的话，那就只能封装成exe文件了.">
+<meta property="og:image" content="http://7xl4c6.com1.z0.glb.clouddn.com/Fhmonn3-ibpvI6F9oqu6W8H-fBjG">
+<meta property="og:updated_time" content="2017-09-06T07:39:23.704Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="tixing">
+<meta name="twitter:title" content="每天流程备忘提醒">
+<meta name="twitter:description" content="本篇主要是利用python写一个办公室备忘提醒，比如间隔多长时间我需要去处理分配的任务，像这种需求的时候，就可以定时弹出一个windows弹框，提醒自己该去处理什么事情了. 像我本机已经安装了python,直接双击.py文件就可以了；如果想发给没有环境的人的话，那就只能封装成exe文件了.">
+<meta name="twitter:image" content="http://7xl4c6.com1.z0.glb.clouddn.com/Fhmonn3-ibpvI6F9oqu6W8H-fBjG">
   
     <link rel="alternative" href="/atom.xml" title="ChenWe的博客" type="application/atom+xml">
   
@@ -161,7 +167,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      tixing
+      每天流程备忘提醒
     </h1>
   
 
@@ -174,7 +180,14 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        
+        <p>本篇主要是利用python写一个办公室备忘提醒，比如间隔多长时间我需要去处理分配的任务，像这种需求的时候，就可以定时弹出一个windows弹框，提醒自己该去处理什么事情了.</p>
+<p>像我本机已经安装了python,直接双击.py文件就可以了；如果想发给没有环境的人的话，那就只能封装成exe文件了.</p>
+<p><img src="http://7xl4c6.com1.z0.glb.clouddn.com/Fhmonn3-ibpvI6F9oqu6W8H-fBjG" alt=""></p>
+<a id="more"></a>
+<p>代码如下:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">from tkinter import *</div><div class="line">import time</div><div class="line"></div><div class="line">class Application(Frame):</div><div class="line">    def __init__(self, master=None):</div><div class="line">        Frame.__init__(self, master)</div><div class="line">        self.pack()</div><div class="line">        self.createWidgets()</div><div class="line"></div><div class="line">    def createWidgets(self):</div><div class="line">        self.helloLabel = Label(self, text=<span class="string">'   现在已经过了30min，应该去把前天的算法再研究一遍了  '</span>)</div><div class="line">        self.helloLabel.pack()</div><div class="line">        self.quitButton = Button(self, text=<span class="string">'Quit'</span>, <span class="built_in">command</span>=self.quit)</div><div class="line">        self.quitButton.pack()</div><div class="line"></div><div class="line">time.sleep(30*60)</div><div class="line">		</div><div class="line">app = Application()</div><div class="line"><span class="comment"># 设置窗口标题:</span></div><div class="line">app.master.title(<span class="string">'   看我！ 看我！看我！  '</span>)</div><div class="line"><span class="comment"># 主消息循环:</span></div><div class="line">app.mainloop()</div></pre></td></tr></table></figure>
+<p>PS. 如果是多个任务，直接for循环结合elif也是比较简单的，这边不做重写，本来就是几个小demo，太多代码的话就脱离了小demo的本意，而且如果自己动手的话，这个需求也很简单（大家又不是谁没写过代码一样）.</p>
+
       
 
       
@@ -208,6 +221,25 @@
     <div class="article-info article-info-index">
       
       
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">python</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">备忘提醒</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">GUI</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
       
 
       

@@ -15,7 +15,7 @@
 <meta property="og:url" content="https://screetbloom.github.io/2017/09/08/calculation/index.html">
 <meta property="og:site_name" content="ChenWe的博客">
 <meta property="og:description" content="包含插入排序、希尔排序、选择排序和快速排序一般我们常用的是冒泡排序，但是常用的不代表就是好的（当然这种算法思路很好）.冒泡在处理数量大的数据时表现的比较乏力， 而且顺便了解多一些的基本算法，对日常的工作肯定是比较有好处的，不然，你可能会看到有的人工作好几年了，但是依然是只会冒泡（我不是歧视冒泡，只是就一个冒泡排序算法行走江湖，是不是有点过分?老铁）">
-<meta property="og:updated_time" content="2017-09-08T08:18:30.458Z">
+<meta property="og:updated_time" content="2017-09-08T08:20:09.518Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="js理解常见排序算法">
 <meta name="twitter:description" content="包含插入排序、希尔排序、选择排序和快速排序一般我们常用的是冒泡排序，但是常用的不代表就是好的（当然这种算法思路很好）.冒泡在处理数量大的数据时表现的比较乏力， 而且顺便了解多一些的基本算法，对日常的工作肯定是比较有好处的，不然，你可能会看到有的人工作好几年了，但是依然是只会冒泡（我不是歧视冒泡，只是就一个冒泡排序算法行走江湖，是不是有点过分?老铁）">
@@ -185,7 +185,7 @@
 <p>插入排序算法的基本思想是：<br>&emsp;&emsp;1.从第一个元素开始，该元素可以认为已经被排序。<br>&emsp;&emsp;2.取出下一个元素，在已经排序的元素序列中从后向前扫描。<br>&emsp;&emsp;3.如果该元素（已排序）大于新元素，将该元素移到下一位置。<br>&emsp;&emsp;4.重复步骤3，直到找到已排序的元素小于或者等于新元素的位置。<br>&emsp;&emsp;5.将新元素插入到该位置后。<br>&emsp;&emsp;6.重复步骤2~5</p>
 <p>在最完美的情况下，排序前对象已经按照要求的有序，只需要比较n−1次 ; 移动次数为0，则对应的时间复杂度为O(n)；最坏情况下,排序前对象为要求的顺序的反序，则第i趟时第i个对象必须与前面i个对象都做排序码比较,并且每做1次比较就要做1次数据移动，对应的时间复杂度为O(n^2)。所以插入排序也仅适用于少量数据的排序。</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="keyword">function</span> insertSort(arr)&#123;</div><div class="line"></div><div class="line">  var i,</div><div class="line">      j,</div><div class="line">      temp;</div><div class="line">      </div><div class="line">  <span class="keyword">for</span>(i=1;i &lt; arr.length;i++)&#123;</div><div class="line">   temp = arr[i];</div><div class="line">   j = i-1;</div><div class="line">    <span class="keyword">while</span>(j&gt;=0 &amp;&amp; arr[j] &gt; temp)&#123;</div><div class="line">       arr[j+1] = arr[j];</div><div class="line">       j--;</div><div class="line">    &#125;//<span class="keyword">while</span></div><div class="line">    arr[j+1] = temp ;</div><div class="line">  &#125;//<span class="keyword">for</span>   </div><div class="line">  <span class="built_in">return</span> arr;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>上面的实现过程是先取一个待排序的值与前面已排好序的数列中的元素从右往左逐个比较，如果数列中的元素比它大的话，就将元素移到下一位，直到遇到比它小的元素，便在该元素的后面此插入值.</p>
+<p>上面的实现过程是先取一个待排序的值与前面已排好序的数列中的元素从右往左逐个比较，如果数列中的元素比它大的话，就将元素移到下一位，直到遇到比它小的元素，便在该元素的后面插入值.</p>
 
       
 

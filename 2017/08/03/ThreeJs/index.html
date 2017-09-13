@@ -29,7 +29,7 @@
 <meta property="og:image" content="http://7xl4c6.com1.z0.glb.clouddn.com/FhK_YpzoELC1t066F7avCGe6SleC">
 <meta property="og:image" content="http://7xl4c6.com1.z0.glb.clouddn.com/FricREXutNVP2VRPBJ9KsJ7j_eIY">
 <meta property="og:image" content="http://7xl4c6.com1.z0.glb.clouddn.com/FolosEe2Dg0PjSVUlgXHw0wq-UUQ">
-<meta property="og:updated_time" content="2017-08-07T04:10:55.057Z">
+<meta property="og:updated_time" content="2017-09-13T09:56:29.684Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="three.js">
 <meta name="twitter:description" content="理解ThreeJs(包括如何实现这个基础的“地球”,扩展中..)      1、下载three.js, 并在页面引用如果你找不到合适的下载地址的话，可以看看这个CDN，Here,如果想要下载的话，拷贝CDN地址直接URL打开网页，复制原代码.官网看这里;官网例子看这里。有一点需要注意，three.js版本很多，同样的代码可能会产生差异的效果，也可能因为代码和js版本不一致而出不来效果。">
@@ -238,7 +238,7 @@
 <p>变成这样:<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">//创建一个 x、y、z方向为 1、2、3,颜色为 红色</div><div class="line">       var cube = new THREE.Mesh(new THREE.CubeGeometry(1, 2, 3,20,20,30),   </div><div class="line">       //后面加上了 20,20,30,x轴的两面都切割20份，y轴的两面都切割20份，z轴的两面都切割成30份</div><div class="line">           new THREE.MeshBasicMaterial(&#123;</div><div class="line">               color: 0xff0000,</div><div class="line">               wireframe: <span class="literal">true</span></div><div class="line">           &#125;)</div><div class="line">       );</div><div class="line">       scene.add(cube);</div></pre></td></tr></table></figure></p>
 <p>效果图：<br><img src="http://7xl4c6.com1.z0.glb.clouddn.com/FpyCSmPaIf2GiXpOL-7ClYZuDr5_" alt="Alt text"></p>
 <p>现在大致上可以看出来立方体的结构了，那我们现在再进一步，将立方体旋转过来看，直接验证是不是。<br>在定义相机这里，改变我们camera的位置，来达到旋转立方体的效果.<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">  //定义相机  camera</div><div class="line">var camera = new THREE.PerspectiveCamera(45, 4 / 3, 1, 1000);</div><div class="line">camera.position.set(-2, -4, 5);</div><div class="line">scene.add(camera);</div></pre></td></tr></table></figure></p>
-<p>但是单纯这样的话，你会发现现在整个立方体看不到了。因为我们位置移动了，camera移动走了，但是没有注释着立方体，相当于：</p>
+<p>但是单纯这样的话，你会发现现在整个立方体看不到了。因为我们位置移动了，camera移动走了，但是没有注视着立方体，相当于：</p>
 <p><img src="http://7xl4c6.com1.z0.glb.clouddn.com/Fiy4s639p-T-UjRPcvqmxGI7HDXc" alt="Alt text"></p>
 <p>变成了：</p>
 <p><img src="http://7xl4c6.com1.z0.glb.clouddn.com/FhGghpA-3O_GPw2NeXJnKtS2CESv" alt="Alt text"></p>

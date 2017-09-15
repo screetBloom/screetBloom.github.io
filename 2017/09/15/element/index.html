@@ -18,7 +18,7 @@
 <meta property="og:image" content="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1505457245597&di=e8bca7372f2bedea19f2c803959d294e&imgtype=0&src=http%3A%2F%2Fimg.52jbj.com%2Fd%2Ffile%2F170119%2F1-eqc3jdt4txu.jpg">
 <meta property="og:image" content="http://7xl4c6.com1.z0.glb.clouddn.com/FvP_DNcqFRRYabq3xematjilXChM">
 <meta property="og:image" content="http://7xl4c6.com1.z0.glb.clouddn.com/Fg8ZIRQiYooDVgrHXmE3UXPedzQR">
-<meta property="og:updated_time" content="2017-09-15T05:09:31.957Z">
+<meta property="og:updated_time" content="2017-09-15T05:11:17.082Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="elementUI的使用心得">
 <meta name="twitter:description" content="VUE挺适合灵活的做小型的东西，比较简单，甚至可以说贼简单；但是如果单纯的我们就会VUE的话也是比较单薄的，因为这东西太简单了，谁都会，谁都可以直接上手，甚至UI都帮你设计好了. 这个对个人来说也好也不好,好的是,你如果就把它当做你会的众多工具中的一个，那么它很容易帮你提高开发效率；不好的就是对个人来说一点核心价值都建立不起来，你会的很容易被替代,除非你研究的很深. 这个主要讲的是VUE+Elem">
@@ -212,6 +212,7 @@
 <p>这里当我们的表格宽度过长的时候，可能会出现表头和表数据位置不对应的问题<br><img src="http://7xl4c6.com1.z0.glb.clouddn.com/FvP_DNcqFRRYabq3xematjilXChM" alt=""></p>
 <p>这个时候，可能有时候会是width的问题,这里将width=”180”改成min-width=”180”,同时给table加一个text-align: left就行<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line">&lt;el-table</div><div class="line">                :data=<span class="string">"tableData"</span></div><div class="line">                style=<span class="string">"text-align: left"</span>&gt;</div><div class="line">            &lt;el-table-column</div><div class="line">                    prop=<span class="string">"date"</span></div><div class="line">                    label=<span class="string">"日期"</span></div><div class="line">                    min-width=<span class="string">"33%"</span>&gt;</div><div class="line">            &lt;/el-table-column&gt;</div><div class="line">            &lt;el-table-column</div><div class="line">                    prop=<span class="string">"name"</span></div><div class="line">                    label=<span class="string">"姓名"</span></div><div class="line">                    min-width=<span class="string">"33%"</span>&gt;</div><div class="line">            &lt;/el-table-column&gt;</div><div class="line">            &lt;el-table-column</div><div class="line">                    prop=<span class="string">"address"</span></div><div class="line">                    label=<span class="string">"地址"</span></div><div class="line">                    min-width=<span class="string">"34%"</span>&gt;</div><div class="line">            &lt;/el-table-column&gt;</div><div class="line">        &lt;/el-table&gt;</div></pre></td></tr></table></figure></p>
 <p><img src="http://7xl4c6.com1.z0.glb.clouddn.com/Fg8ZIRQiYooDVgrHXmE3UXPedzQR" alt=""></p>
+<p>当然不出现这个问题最好</p>
 <p>扩展中….</p>
 
       

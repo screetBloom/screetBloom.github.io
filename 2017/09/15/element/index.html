@@ -27,7 +27,7 @@
 <meta property="og:image" content="http://7xl4c6.com1.z0.glb.clouddn.com/FtUm_U-z5eaTXX0drJYBrl9APEnu">
 <meta property="og:image" content="http://7xl4c6.com1.z0.glb.clouddn.com/FtJOnNmaGaWAHn0VXpdc3MRI1V8I">
 <meta property="og:image" content="http://7xl4c6.com1.z0.glb.clouddn.com/FkLy8XOd06w2n6XmHY56LSZoMQlo">
-<meta property="og:updated_time" content="2017-09-19T09:52:29.723Z">
+<meta property="og:updated_time" content="2017-09-19T10:20:40.211Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="相对极其简单的VUE">
 <meta name="twitter:description" content="VUE挺适合灵活的做小型的东西，比较简单，甚至可以说贼简单；但是如果单纯的就会VUE的话也是比较单薄的，因为这东西太简单了，谁都会，谁都可以直接上手，甚至UI都帮你设计好了. 这个对个人来说也好也不好,好的是,你如果就把它当做你会的众多工具中的一个，那么它很容易帮你提高开发效率；不好的就是对个人来说一点核心价值都建立不起来，你会的别人也会,很容易被替代,除非你研究的很深. 结尾附上一个自己写的小项">
@@ -230,7 +230,7 @@
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">onSelected : <span class="keyword">function</span>(data) &#123;</div><div class="line">                this.select.province = data.province.value</div><div class="line">                this.select.city = data.city.value</div><div class="line">                this.select.area = data.area.value</div><div class="line">                console.log(this.select.province+<span class="string">"&gt;&gt;&gt;&gt;&gt;"</span>+this.select.city+<span class="string">"&gt;&gt;&gt;&gt;"</span>+this.select.area);</div><div class="line">            &#125;,</div></pre></td></tr></table></figure>
 <p>&emsp;&emsp;4.3在template中绑定方法</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;v-distpicker @selected=<span class="string">"onSelected"</span>&gt;&lt;/v-distpicker&gt;</div></pre></td></tr></table></figure>
-<p>这样的话就可以获取到选择的数据了，如果直接这样是没有用的,根据VUE的debug来看不做这样的处理，select的值是不变的(也或许是我哪里有遗漏)</p>
+<p>这样的话就可以获取到选择的数据了，如果直接select.province这样是没有用的,根据VUE的debug来看不做这样的处理，select的值是不变的(也或许是我哪里有遗漏)</p>
 <h5 id="2-VUE2中页面表格数据导出成excel信息"><a href="#2-VUE2中页面表格数据导出成excel信息" class="headerlink" title="2.VUE2中页面表格数据导出成excel信息"></a>2.VUE2中页面表格数据导出成excel信息</h5><p>这里我都在有道云中总结过</p>
 <p>1.安装2个依赖：<br>    npm install -S file-saver xlsx<br>    npm install -D script-loader</p>
 <p>2.项目src下新建文件夹 vendor</p>

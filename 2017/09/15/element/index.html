@@ -27,7 +27,7 @@
 <meta property="og:image" content="http://7xl4c6.com1.z0.glb.clouddn.com/FtUm_U-z5eaTXX0drJYBrl9APEnu">
 <meta property="og:image" content="http://7xl4c6.com1.z0.glb.clouddn.com/FtJOnNmaGaWAHn0VXpdc3MRI1V8I">
 <meta property="og:image" content="http://7xl4c6.com1.z0.glb.clouddn.com/FkLy8XOd06w2n6XmHY56LSZoMQlo">
-<meta property="og:updated_time" content="2017-09-22T03:12:40.377Z">
+<meta property="og:updated_time" content="2017-09-22T03:14:25.386Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="相对极其简单的VUE">
 <meta name="twitter:description" content="VUE挺适合灵活的做小型的东西，比较简单，甚至可以说贼简单；但是如果单纯的就会VUE的话也是比较单薄的，因为这东西太简单了，谁都会，谁都可以直接上手，甚至UI都帮你设计好了. 这个对个人来说也好也不好,好的是,你如果就把它当做你会的众多工具中的一个，那么它很容易帮你提高开发效率；不好的就是对个人来说一点核心价值都建立不起来，你会的别人也会,很容易被替代,除非你研究的很深. 结尾附上一个自己写的小项">
@@ -216,9 +216,9 @@
 <p>&emsp;&emsp;3.1 切换成管理员权限重新运行 npm install</p>
 <p>&emsp;&emsp;3.2 我的原因是切换npm版本,当npm版本大于等于5.4时可能会出现这个问题,切换到5.3就没有这个问题.命令:npm install -g npm@5.3</p>
 <p>&emsp;&emsp;3.3 如果已经是管理员了，现在很可能的一个问题是,删除npmrc文件.强调：不是nodejs安装目录npm模块下的那个npmrc文件；而是在C:\Users{账户}\下的.npmrc文件</p>
-<h4 id="组件的具体使用"><a href="#组件的具体使用" class="headerlink" title="组件的具体使用"></a>组件的具体使用</h4><h5 id="1-省市区联动-轻量组件-比较方便-这里主要讲坑"><a href="#1-省市区联动-轻量组件-比较方便-这里主要讲坑" class="headerlink" title="1.省市区联动(轻量组件,比较方便),这里主要讲坑"></a>1.省市区联动(轻量组件,比较方便),这里主要讲坑</h5><p>首先说明一点，在具体项目的时候一般大家应该直接用3个select框而不是组件的，每次点击select框其实都是在请求后台拿到省市区数据填充到select中,这样做的好处是可以随时变更省市区范围(看产品怎么说),有什么需求变什么，不依托于外部数据(因为可能苏州的吴中区规划到了虎丘或者怎样，但是外部数据没有变更)； 或者使用公司内部自己的组件</p>
+<h4 id="组件的具体使用"><a href="#组件的具体使用" class="headerlink" title="组件的具体使用"></a>组件的具体使用</h4><p>首先说明一点，在具体项目的时候一般大家应该直接用3个select框而不是组件的，每次点击select框其实都是在请求后台拿到省市区数据填充到select中,这样做的好处是可以随时变更省市区范围(看产品怎么说),有什么需求变什么，不依托于外部数据(因为可能苏州的吴中区规划到了虎丘或者怎样，但是外部数据没有变更)； 或者使用公司内部自己的组件</p>
 <p>下面是针对非特定需求的省市区联动来说</p>
-<p>官网在这,<a href="https://distpicker.iline.co/" target="_blank" rel="external">点击这里打开官网</a><br>效果如图:<br><img src="http://7xl4c6.com1.z0.glb.clouddn.com/FhZoJgT40dOCF_AnrwfQc9mncA3A" alt=""></p>
+<h5 id="1-省市区联动-轻量组件-比较方便-这里主要讲坑"><a href="#1-省市区联动-轻量组件-比较方便-这里主要讲坑" class="headerlink" title="1.省市区联动(轻量组件,比较方便),这里主要讲坑"></a>1.省市区联动(轻量组件,比较方便),这里主要讲坑</h5><p>官网在这,<a href="https://distpicker.iline.co/" target="_blank" rel="external">点击这里打开官网</a><br>效果如图:<br><img src="http://7xl4c6.com1.z0.glb.clouddn.com/FhZoJgT40dOCF_AnrwfQc9mncA3A" alt=""></p>
 <p>1.下载npm包</p>
 <p> npm install v-distpicker –save</p>
 <p>2.main.js中注册<br> <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">import VDistpicker from <span class="string">'v-distpicker'</span></div><div class="line"></div><div class="line">Vue.component(<span class="string">'v-distpicker'</span>, VDistpicker)</div></pre></td></tr></table></figure></p>

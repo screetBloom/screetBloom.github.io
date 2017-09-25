@@ -8,17 +8,17 @@
   <link rel="dns-prefetch" href="https://screetbloom.github.io">
   <title>js生成数据库直接可插入时间 | ChenWe的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="引言&amp;emsp;&amp;emsp;很多时候，我们会有需要用js生成数据库的date类型时间的需求，比如我对某个应用评论，那么此时我需要记录下用户评论的时间，这个操作就可以交给后台来完成.&amp;emsp;&amp;emsp;接下来讨论的就是当我们用node作为服务端语言时，如何完成这个需求.(当然这个代码肯定前台也是可以用的)">
+  <meta name="description" content="引言&amp;emsp;&amp;emsp;这是修改版 &amp;emsp;&amp;emsp;这里讨论的是，当我们存在数据库里的是dateTime形式的数据(mysql)，如何判断当天当日本月和生成形如”2017-8-20”的天数据 &amp;emsp;&amp;emsp;接下来讨论的就是当我们用node作为服务端语言时，如何完成这个需求.(当然这个代码肯定前台也是可以用的)">
 <meta name="keywords" content="js,mysql">
 <meta property="og:type" content="article">
 <meta property="og:title" content="js生成数据库直接可插入时间">
 <meta property="og:url" content="https://screetbloom.github.io/2017/08/31/js生成数据库date/index.html">
 <meta property="og:site_name" content="ChenWe的博客">
-<meta property="og:description" content="引言&amp;emsp;&amp;emsp;很多时候，我们会有需要用js生成数据库的date类型时间的需求，比如我对某个应用评论，那么此时我需要记录下用户评论的时间，这个操作就可以交给后台来完成.&amp;emsp;&amp;emsp;接下来讨论的就是当我们用node作为服务端语言时，如何完成这个需求.(当然这个代码肯定前台也是可以用的)">
-<meta property="og:updated_time" content="2017-09-05T04:22:47.659Z">
+<meta property="og:description" content="引言&amp;emsp;&amp;emsp;这是修改版 &amp;emsp;&amp;emsp;这里讨论的是，当我们存在数据库里的是dateTime形式的数据(mysql)，如何判断当天当日本月和生成形如”2017-8-20”的天数据 &amp;emsp;&amp;emsp;接下来讨论的就是当我们用node作为服务端语言时，如何完成这个需求.(当然这个代码肯定前台也是可以用的)">
+<meta property="og:updated_time" content="2017-09-25T02:20:44.247Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="js生成数据库直接可插入时间">
-<meta name="twitter:description" content="引言&amp;emsp;&amp;emsp;很多时候，我们会有需要用js生成数据库的date类型时间的需求，比如我对某个应用评论，那么此时我需要记录下用户评论的时间，这个操作就可以交给后台来完成.&amp;emsp;&amp;emsp;接下来讨论的就是当我们用node作为服务端语言时，如何完成这个需求.(当然这个代码肯定前台也是可以用的)">
+<meta name="twitter:description" content="引言&amp;emsp;&amp;emsp;这是修改版 &amp;emsp;&amp;emsp;这里讨论的是，当我们存在数据库里的是dateTime形式的数据(mysql)，如何判断当天当日本月和生成形如”2017-8-20”的天数据 &amp;emsp;&amp;emsp;接下来讨论的就是当我们用node作为服务端语言时，如何完成这个需求.(当然这个代码肯定前台也是可以用的)">
   
     <link rel="alternative" href="/atom.xml" title="ChenWe的博客" type="application/atom+xml">
   
@@ -184,11 +184,13 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="引言"><a href="#引言" class="headerlink" title="引言"></a>引言</h3><p>&emsp;&emsp;很多时候，我们会有需要用js生成数据库的date类型时间的需求，比如我对某个应用评论，那么此时我需要记录下用户评论的时间，这个操作就可以交给后台来完成.<br>&emsp;&emsp;接下来讨论的就是当我们用node作为服务端语言时，如何完成这个需求.(当然这个代码肯定前台也是可以用的)</p>
+        <h3 id="引言"><a href="#引言" class="headerlink" title="引言"></a>引言</h3><p>&emsp;&emsp;这是修改版</p>
+<p>&emsp;&emsp;这里讨论的是，当我们存在数据库里的是dateTime形式的数据(mysql)，如何判断当天当日本月和生成形如”2017-8-20”的天数据</p>
+<p>&emsp;&emsp;接下来讨论的就是当我们用node作为服务端语言时，如何完成这个需求.(当然这个代码肯定前台也是可以用的)</p>
 <a id="more"></a>
-<h2 id="生成date格式时间的js代码如下"><a href="#生成date格式时间的js代码如下" class="headerlink" title="生成date格式时间的js代码如下"></a>生成date格式时间的js代码如下</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">function</span> <span class="function"><span class="title">getNowTime</span></span>() &#123;</div><div class="line">    var time = new Date();</div><div class="line">    var m = time.getMonth() + 1;</div><div class="line">    var t = time.getFullYear() + <span class="string">"-"</span> + m + <span class="string">"-"</span></div><div class="line">        + time.getDate() + <span class="string">" "</span> + time.getHours() + <span class="string">":"</span></div><div class="line">        + time.getMinutes() + <span class="string">":"</span> + time.getSeconds();</div><div class="line">    <span class="built_in">return</span> t;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<h2 id="解码数据库date格式时间的js代码如下"><a href="#解码数据库date格式时间的js代码如下" class="headerlink" title="解码数据库date格式时间的js代码如下"></a>解码数据库date格式时间的js代码如下</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">formTime(e) &#123;</div><div class="line">    var d = new Date(e)</div><div class="line">    e = d.getFullYear() + <span class="string">'-'</span> + (d.getMonth() + 1) + <span class="string">'-'</span> + d.getDate() + <span class="string">' '</span> + d.getHours() + <span class="string">':'</span> + d.getMinutes() + <span class="string">':'</span> + d.getSeconds();</div><div class="line">    <span class="built_in">return</span> e;</div><div class="line">  &#125;</div></pre></td></tr></table></figure>
-
+<h3 id="生成date格式时间的js代码如下"><a href="#生成date格式时间的js代码如下" class="headerlink" title="生成date格式时间的js代码如下"></a>生成date格式时间的js代码如下</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">function</span> <span class="function"><span class="title">getNowTime</span></span>() &#123;</div><div class="line">    var time = new Date();</div><div class="line">    var m = time.getMonth() + 1;</div><div class="line">    var t = time.getFullYear() + <span class="string">"-"</span> + m + <span class="string">"-"</span></div><div class="line">        + time.getDate() + <span class="string">" "</span> + time.getHours() + <span class="string">":"</span></div><div class="line">        + time.getMinutes() + <span class="string">":"</span> + time.getSeconds();</div><div class="line">    <span class="built_in">return</span> t;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="解码数据库date格式时间的js代码如下"><a href="#解码数据库date格式时间的js代码如下" class="headerlink" title="解码数据库date格式时间的js代码如下"></a>解码数据库date格式时间的js代码如下</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">formTime(e) &#123;</div><div class="line">    var d = new Date(e)</div><div class="line">    e = d.getFullYear() + <span class="string">'-'</span> + (d.getMonth() + 1) + <span class="string">'-'</span> + d.getDate() + <span class="string">' '</span> + d.getHours() + <span class="string">':'</span> + d.getMinutes() + <span class="string">':'</span> + d.getSeconds();</div><div class="line">    <span class="built_in">return</span> e;</div><div class="line">  &#125;</div></pre></td></tr></table></figure>
+<h3 id="mysql获取当天本日本周本月数据-昨天写项目刚好用到，很方便"><a href="#mysql获取当天本日本周本月数据-昨天写项目刚好用到，很方便" class="headerlink" title="mysql获取当天本日本周本月数据(昨天写项目刚好用到，很方便)"></a>mysql获取当天本日本周本月数据(昨天写项目刚好用到，很方便)</h3>
       
 
       

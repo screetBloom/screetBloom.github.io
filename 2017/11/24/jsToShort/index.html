@@ -8,17 +8,17 @@
   <link rel="dns-prefetch" href="https://screetbloom.github.io">
   <title>js简写 | ChenWe的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="js的一些小技巧个人写js到现在还是感觉js简写是很重要的.首先，这个代表了对技术的追求性；其次，代码执行效率比较高，最后也是最重要的是：装逼！，对，就是装逼，学技术不装逼还学还学什么技术? 简单举例(从项目中取几个): 1res.data.OrderStatus == &apos;确认数据&apos; &amp;amp;&amp;amp; this.seatProgressAdd() || res.data.OrderStatus">
+  <meta name="description" content="js的一些小技巧个人写js到现在还是感觉js简写是很重要的.首先，这个代表了对技术的追求性；其次，代码执行效率比较高，最后也是最重要的是：装逼！，对，就是装逼，学技术不装逼还学什么技术? 简单举例(从项目中取几个): 1res.data.OrderStatus == &apos;确认数据&apos; &amp;amp;&amp;amp; this.seatProgressAdd() || res.data.OrderStatus =">
 <meta name="keywords" content="js">
 <meta property="og:type" content="article">
 <meta property="og:title" content="js简写">
 <meta property="og:url" content="https://screetbloom.github.io/2017/11/24/jsToShort/index.html">
 <meta property="og:site_name" content="ChenWe的博客">
-<meta property="og:description" content="js的一些小技巧个人写js到现在还是感觉js简写是很重要的.首先，这个代表了对技术的追求性；其次，代码执行效率比较高，最后也是最重要的是：装逼！，对，就是装逼，学技术不装逼还学还学什么技术? 简单举例(从项目中取几个): 1res.data.OrderStatus == &apos;确认数据&apos; &amp;amp;&amp;amp; this.seatProgressAdd() || res.data.OrderStatus">
-<meta property="og:updated_time" content="2017-11-24T05:38:45.101Z">
+<meta property="og:description" content="js的一些小技巧个人写js到现在还是感觉js简写是很重要的.首先，这个代表了对技术的追求性；其次，代码执行效率比较高，最后也是最重要的是：装逼！，对，就是装逼，学技术不装逼还学什么技术? 简单举例(从项目中取几个): 1res.data.OrderStatus == &apos;确认数据&apos; &amp;amp;&amp;amp; this.seatProgressAdd() || res.data.OrderStatus =">
+<meta property="og:updated_time" content="2017-11-24T05:40:36.655Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="js简写">
-<meta name="twitter:description" content="js的一些小技巧个人写js到现在还是感觉js简写是很重要的.首先，这个代表了对技术的追求性；其次，代码执行效率比较高，最后也是最重要的是：装逼！，对，就是装逼，学技术不装逼还学还学什么技术? 简单举例(从项目中取几个): 1res.data.OrderStatus == &apos;确认数据&apos; &amp;amp;&amp;amp; this.seatProgressAdd() || res.data.OrderStatus">
+<meta name="twitter:description" content="js的一些小技巧个人写js到现在还是感觉js简写是很重要的.首先，这个代表了对技术的追求性；其次，代码执行效率比较高，最后也是最重要的是：装逼！，对，就是装逼，学技术不装逼还学什么技术? 简单举例(从项目中取几个): 1res.data.OrderStatus == &apos;确认数据&apos; &amp;amp;&amp;amp; this.seatProgressAdd() || res.data.OrderStatus =">
   
     <link rel="alternative" href="/atom.xml" title="ChenWe的博客" type="application/atom+xml">
   
@@ -184,12 +184,12 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="js的一些小技巧"><a href="#js的一些小技巧" class="headerlink" title="js的一些小技巧"></a>js的一些小技巧</h2><p>个人写js到现在还是感觉js简写是很重要的.首先，这个代表了对技术的追求性；其次，代码执行效率比较高，最后也是最重要的是：装逼！，对，就是装逼，学技术不装逼还学还学什么技术?</p>
+        <h2 id="js的一些小技巧"><a href="#js的一些小技巧" class="headerlink" title="js的一些小技巧"></a>js的一些小技巧</h2><p>个人写js到现在还是感觉js简写是很重要的.首先，这个代表了对技术的追求性；其次，代码执行效率比较高，最后也是最重要的是：装逼！，对，就是装逼，学技术不装逼还学什么技术?</p>
 <p>简单举例(从项目中取几个):</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">res.data.OrderStatus == <span class="string">'确认数据'</span> &amp;&amp; this.seatProgressAdd() || res.data.OrderStatus == <span class="string">'等待数据'</span> &amp;&amp; this.countTime()</div></pre></td></tr></table></figure>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">var result = (para&gt;12 &amp;&amp; 4) || (para&gt;10 &amp;&amp; 3) || (para&gt;5 &amp;&amp; 2) || (para&gt;0 &amp;&amp; 1) || 0;</div></pre></td></tr></table></figure>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">var showData= &#123;<span class="string">'运营组'</span>:1,<span class="string">'渠道组'</span>:2,<span class="string">'测试部门'</span>:3,<span class="string">'后台'</span>:4&#125;[res.data.num] || 0;</div></pre></td></tr></table></figure>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">function</span> testMethod(obj,callback)&#123;</div><div class="line">      xxxxxx</div><div class="line">      xxxxxx</div><div class="line">      xxxxxx</div><div class="line">       callback &amp;&amp; callback(res, req)</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">function</span> testMethod(obj,callback)&#123;</div><div class="line">      xxxxxx</div><div class="line">      xxxxxx</div><div class="line">      xxxxxx</div><div class="line">      callback &amp;&amp; callback(res, req)</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <a id="more"></a>
 
       

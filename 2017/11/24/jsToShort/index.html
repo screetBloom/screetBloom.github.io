@@ -15,10 +15,12 @@
 <meta property="og:url" content="https://screetbloom.github.io/2017/11/24/jsToShort/index.html">
 <meta property="og:site_name" content="ChenWe的博客">
 <meta property="og:description" content="js的一些小技巧个人写js到现在还是感觉js简写是很重要的.首先，即使我们不写，也要认识其他人的这种写法（比如VUE源码）；其次，代码执行效率比较高，最后也是最重要的是：装逼！，对，就是装逼，学技术不装逼还学什么技术?人生的一大乐趣就是装逼 &amp;gt;_&amp;lt; 简单举例(从项目中取几个): 1!!res.data &amp;amp;&amp;amp; next()  || ~~res.statusCode &amp;lt">
-<meta property="og:updated_time" content="2017-11-30T05:27:50.372Z">
+<meta property="og:image" content="http://7xl4c6.com1.z0.glb.clouddn.com/FqTSGWqG5_kE4DBqMDWfL1TjXYaJ">
+<meta property="og:updated_time" content="2017-11-30T05:31:29.677Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="js简写">
 <meta name="twitter:description" content="js的一些小技巧个人写js到现在还是感觉js简写是很重要的.首先，即使我们不写，也要认识其他人的这种写法（比如VUE源码）；其次，代码执行效率比较高，最后也是最重要的是：装逼！，对，就是装逼，学技术不装逼还学什么技术?人生的一大乐趣就是装逼 &amp;gt;_&amp;lt; 简单举例(从项目中取几个): 1!!res.data &amp;amp;&amp;amp; next()  || ~~res.statusCode &amp;lt">
+<meta name="twitter:image" content="http://7xl4c6.com1.z0.glb.clouddn.com/FqTSGWqG5_kE4DBqMDWfL1TjXYaJ">
   
     <link rel="alternative" href="/atom.xml" title="ChenWe的博客" type="application/atom+xml">
   
@@ -196,7 +198,9 @@
 <p>js里的“或”“非” 指的就是 “||”  “&amp;&amp;”</p>
 <p>官方的话可以自己查，用自己的话说，算路运算”&amp;&amp;” “||”就是：<br>“&amp;&amp;” 所在的表达式语句块中,只要上一个表达式为假，就不会往下执行 , 那”&amp;&amp;” 很明显可以简写 if else<br>“||” 所在的表达式语句块中,只要上一个表达式为真，就不会往下执行</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">var result = (para&gt;12 &amp;&amp; 4) || (para&gt;10 &amp;&amp; 3) || (para&gt;5 &amp;&amp; 2) || (para&gt;0 &amp;&amp; 1) || 0;</div></pre></td></tr></table></figure>
-<p>我们现在来分析这个写法： 参数para&gt;12的话，result = 4 ,不执行下面的了  ; 参数para不大于12的基础上，para大于10吗，大于的话，result= 3 ,下面的不执行 </p>
+<p>我们现在来分析这个写法： 参数para&gt;12的话，result = 4 ,不执行下面的了  ; 参数para不大于12的基础上，para大于10吗，大于的话，result= 3 ,下面的不执行 …..  如此往下</p>
+<h2 id="写法"><a href="#写法" class="headerlink" title="!!写法"></a>!!写法</h2><p><img src="http://7xl4c6.com1.z0.glb.clouddn.com/FqTSGWqG5_kE4DBqMDWfL1TjXYaJ" alt=""></p>
+<p>!是取反, !!是强制转换成 布尔类型 ,用这个判断更靠谱，也不容易错</p>
 
       
 

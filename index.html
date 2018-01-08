@@ -168,7 +168,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2018/01/08/slowDOM/">为什么说DOM慢(随笔)</a>
+      <a class="article-title" href="/2018/01/08/slowDOM/">DOM操作慢到虚拟DOM</a>
     </h1>
   
 
@@ -182,7 +182,15 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p>为什么要去关注DOM快慢的问题呢？</p>
-<h2 id="回答为什么DOM操作慢"><a href="#回答为什么DOM操作慢" class="headerlink" title="回答为什么DOM操作慢"></a>回答为什么DOM操作慢</h2>
+<h2 id="回答为什么DOM操作慢"><a href="#回答为什么DOM操作慢" class="headerlink" title="回答为什么DOM操作慢"></a>回答为什么DOM操作慢</h2><p>举个例子，如果我们需要创建10个具有一定长宽颜色等等样式的div，如果我们用直接dom的形式进行，那就是创建一个接着下一个。<br>在这个过程中，创建第一个触发一次浏览器针对dom改变的动作；接着一次接一次的触发9次浏览器相关动作<br>浏览器（webkit内核的）进行一次渲染的过程如下所示：</p>
+<ul>
+<li>解析HTML，并生成一棵DOM tree</li>
+<li>解析各种样式并结合DOM tree生成一棵Render tree</li>
+<li>对Render tree的各个节点计算布局信息，比如box的位置与尺寸</li>
+<li>根据Render tree并利用浏览器的UI层进行绘制</li>
+</ul>
+<p><img src="http://img.blog.csdn.net/20161019151241893" alt=""></p>
+
       
 
       

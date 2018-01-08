@@ -8,18 +8,18 @@
   <link rel="dns-prefetch" href="https://screetbloom.github.io">
   <title>由DOM操作慢延伸到构建虚拟DOM | ChenWe的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="为什么要去关注DOM快慢的问题呢？ 对”DOM操作慢”的认识很大一部分耗时是操作dom时的浏览器动作，虚拟dom的很大一部分性能提升是把更新的操作次数减少.浏览器（webkit内核的）进行一次渲染的过程如下所示：  解析HTML，并生成一棵DOM tree 解析各种样式并结合DOM tree生成一棵Render tree 对Render tree的各个节点计算布局信息，比如box的位置与尺寸 根据">
+  <meta name="description" content="首先有一点需要明确的是: 目前主流的框架基本都是DOM in js ，包括vue、react，由js来书写html 对”DOM操作慢”的认识很大一部分耗时是操作dom时的浏览器动作，虚拟dom的很大一部分性能提升是把更新的操作次数减少.浏览器（webkit内核的）进行一次渲染的过程如下所示：  解析HTML，并生成一棵DOM tree 解析各种样式并结合DOM tree生成一棵Render tre">
 <meta name="keywords" content="心得记录,slowDOM">
 <meta property="og:type" content="article">
 <meta property="og:title" content="由DOM操作慢延伸到构建虚拟DOM">
 <meta property="og:url" content="https://screetbloom.github.io/2018/01/08/slowDOM/index.html">
 <meta property="og:site_name" content="ChenWe的博客">
-<meta property="og:description" content="为什么要去关注DOM快慢的问题呢？ 对”DOM操作慢”的认识很大一部分耗时是操作dom时的浏览器动作，虚拟dom的很大一部分性能提升是把更新的操作次数减少.浏览器（webkit内核的）进行一次渲染的过程如下所示：  解析HTML，并生成一棵DOM tree 解析各种样式并结合DOM tree生成一棵Render tree 对Render tree的各个节点计算布局信息，比如box的位置与尺寸 根据">
+<meta property="og:description" content="首先有一点需要明确的是: 目前主流的框架基本都是DOM in js ，包括vue、react，由js来书写html 对”DOM操作慢”的认识很大一部分耗时是操作dom时的浏览器动作，虚拟dom的很大一部分性能提升是把更新的操作次数减少.浏览器（webkit内核的）进行一次渲染的过程如下所示：  解析HTML，并生成一棵DOM tree 解析各种样式并结合DOM tree生成一棵Render tre">
 <meta property="og:image" content="http://img.blog.csdn.net/20161019151241893">
-<meta property="og:updated_time" content="2018-01-08T08:11:14.050Z">
+<meta property="og:updated_time" content="2018-01-08T08:13:25.871Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="由DOM操作慢延伸到构建虚拟DOM">
-<meta name="twitter:description" content="为什么要去关注DOM快慢的问题呢？ 对”DOM操作慢”的认识很大一部分耗时是操作dom时的浏览器动作，虚拟dom的很大一部分性能提升是把更新的操作次数减少.浏览器（webkit内核的）进行一次渲染的过程如下所示：  解析HTML，并生成一棵DOM tree 解析各种样式并结合DOM tree生成一棵Render tree 对Render tree的各个节点计算布局信息，比如box的位置与尺寸 根据">
+<meta name="twitter:description" content="首先有一点需要明确的是: 目前主流的框架基本都是DOM in js ，包括vue、react，由js来书写html 对”DOM操作慢”的认识很大一部分耗时是操作dom时的浏览器动作，虚拟dom的很大一部分性能提升是把更新的操作次数减少.浏览器（webkit内核的）进行一次渲染的过程如下所示：  解析HTML，并生成一棵DOM tree 解析各种样式并结合DOM tree生成一棵Render tre">
 <meta name="twitter:image" content="http://img.blog.csdn.net/20161019151241893">
   
     <link rel="alternative" href="/atom.xml" title="ChenWe的博客" type="application/atom+xml">
@@ -186,7 +186,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>为什么要去关注DOM快慢的问题呢？</p>
+        <p>首先有一点需要明确的是: 目前主流的框架基本都是DOM in js ，包括vue、react，由js来书写html</p>
 <h2 id="对”DOM操作慢”的认识"><a href="#对”DOM操作慢”的认识" class="headerlink" title="对”DOM操作慢”的认识"></a>对”DOM操作慢”的认识</h2><p>很大一部分耗时是操作dom时的浏览器动作，虚拟dom的很大一部分性能提升是把更新的操作次数减少.<br>浏览器（webkit内核的）进行一次渲染的过程如下所示：</p>
 <ul>
 <li>解析HTML，并生成一棵DOM tree</li>

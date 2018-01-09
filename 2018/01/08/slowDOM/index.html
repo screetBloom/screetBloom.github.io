@@ -16,7 +16,7 @@
 <meta property="og:site_name" content="ChenWe的博客">
 <meta property="og:description" content="首先有一点需要明确的是: 目前主流的框架基本都是DOM in js ，包括vue、react，由js来书写html，目前最新的css方案是 css-in-js 对”DOM操作慢”的认识很大一部分耗时是操作dom时的浏览器动作，虚拟dom的很大一部分性能提升是把更新的操作次数减少.浏览器（webkit内核的）进行一次渲染的过程如下所示：  解析HTML，并生成一棵DOM tree 解析各种样式并结合">
 <meta property="og:image" content="http://img.blog.csdn.net/20161019151241893">
-<meta property="og:updated_time" content="2018-01-08T08:14:38.267Z">
+<meta property="og:updated_time" content="2018-01-09T10:12:07.683Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="由DOM操作慢延伸到构建虚拟DOM">
 <meta name="twitter:description" content="首先有一点需要明确的是: 目前主流的框架基本都是DOM in js ，包括vue、react，由js来书写html，目前最新的css方案是 css-in-js 对”DOM操作慢”的认识很大一部分耗时是操作dom时的浏览器动作，虚拟dom的很大一部分性能提升是把更新的操作次数减少.浏览器（webkit内核的）进行一次渲染的过程如下所示：  解析HTML，并生成一棵DOM tree 解析各种样式并结合">
@@ -196,7 +196,7 @@
 </ul>
 <p><img src="http://img.blog.csdn.net/20161019151241893" alt=""></p>
 <a id="more"></a>
-<p>举个例子，如果我们需要创建10个具有一定长宽颜色等等样式的div，如果我们用直接dom的形式进行，那就是创建一个接着下一个。<br>在这个过程中，创建第一个触发一次浏览器针对dom改变的动作；接着可能一次接一次的触发9次浏览器相关动作,并且当元素的位置和大小改变、添加删除dom节点时，浏览器会重新进行下述的‘layout’，而浏览器的laout刚好是一个需要花比较多时间的过程。<br>当大量元素改变时浏览器甚至会重新渲染整个页面</p>
+<p>举个例子，如果我们需要创建10个具有一定长宽颜色等等样式的div，如果我们用直接dom的形式进行，那就是一个接一个的创建、添加、删除元素等等操作。<br>在这个过程中，创建第一个触发一次浏览器针对dom改变的动作；接着可能一次接一次的触发9次浏览器相关动作,并且当元素的位置和大小改变、添加删除dom节点时，浏览器会重新进行下述的‘layout’，而浏览器的laout刚好是一个需要花比较多时间的过程。<br>当大量元素改变时浏览器甚至会重新渲染整个页面</p>
 
       
 

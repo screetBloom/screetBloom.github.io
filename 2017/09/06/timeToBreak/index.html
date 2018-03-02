@@ -16,7 +16,7 @@
 <meta property="og:site_name" content="Wim_Chen的博客">
 <meta property="og:description" content="python上手第二天. 本篇主要是利用python写一个提醒我们休息的小demo，每隔2个小时，调用默认浏览器自动打开网易云分享出来的一首我喜欢的钢琴纯音乐《如果爱有天意》.平时我在公司时也可能会将代码稍作修改，来提醒自己做一些特定的事情.想制作exe的话，自己搜索一下，也很简单.">
 <meta property="og:image" content="https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=3174607735,3028585932&fm=27&gp=0.jpg">
-<meta property="og:updated_time" content="2017-09-06T07:43:04.519Z">
+<meta property="og:updated_time" content="2017-09-06T07:43:06.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="定时听歌休息">
 <meta name="twitter:description" content="python上手第二天. 本篇主要是利用python写一个提醒我们休息的小demo，每隔2个小时，调用默认浏览器自动打开网易云分享出来的一首我喜欢的钢琴纯音乐《如果爱有天意》.平时我在公司时也可能会将代码稍作修改，来提醒自己做一些特定的事情.想制作exe的话，自己搜索一下，也很简单.">
@@ -191,7 +191,7 @@
 <a id="more"></a>
 <p><img src="https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=3174607735,3028585932&amp;fm=27&amp;gp=0.jpg" alt=""></p>
 <p>代码如下：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">import time</div><div class="line">import webbrowser</div><div class="line"></div><div class="line">total_break = 3</div><div class="line">count_break = 0</div><div class="line"></div><div class="line"><span class="built_in">print</span>(<span class="string">"This program started on "</span>+time.ctime())</div><div class="line"><span class="keyword">while</span>(count_break &lt; total_break):</div><div class="line">  time.sleep(2*60*60)</div><div class="line">  webbrowser.open(<span class="string">"http://music.163.com/song/431794103/?userid=390661347"</span>)</div><div class="line">  count_break = count_break + 1</div></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">import time</span><br><span class="line">import webbrowser</span><br><span class="line"></span><br><span class="line">total_break = 3</span><br><span class="line">count_break = 0</span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(<span class="string">"This program started on "</span>+time.ctime())</span><br><span class="line"><span class="keyword">while</span>(count_break &lt; total_break):</span><br><span class="line">  time.sleep(2*60*60)</span><br><span class="line">  webbrowser.open(<span class="string">"http://music.163.com/song/431794103/?userid=390661347"</span>)</span><br><span class="line">  count_break = count_break + 1</span><br></pre></td></tr></table></figure>
       
 
       

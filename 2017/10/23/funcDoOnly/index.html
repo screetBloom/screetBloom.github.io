@@ -14,7 +14,7 @@
 <meta property="og:url" content="https://screetbloom.github.io/2017/10/23/funcDoOnly/index.html">
 <meta property="og:site_name" content="Wim_Chen的博客">
 <meta property="og:description" content="一个js小技巧有时候可能我们会遇到这种需求：希望这个函数执行一次后就改变函数体，比如:  只有第一次click出发函数，接下来什么都不做 函数如下： 1234567function a() &amp;#123;     console.log(&quot;1&quot;);     a = function() &amp;#123;           console.log(&quot;2&quot;);         &amp;#125; &amp;#125;">
-<meta property="og:updated_time" content="2017-10-26T04:12:08.549Z">
+<meta property="og:updated_time" content="2017-10-26T04:12:10.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="执行一次就改变的函数如何定义">
 <meta name="twitter:description" content="一个js小技巧有时候可能我们会遇到这种需求：希望这个函数执行一次后就改变函数体，比如:  只有第一次click出发函数，接下来什么都不做 函数如下： 1234567function a() &amp;#123;     console.log(&quot;1&quot;);     a = function() &amp;#123;           console.log(&quot;2&quot;);         &amp;#125; &amp;#125;">
@@ -185,7 +185,7 @@
       
         <h2 id="一个js小技巧"><a href="#一个js小技巧" class="headerlink" title="一个js小技巧"></a>一个js小技巧</h2><p>有时候可能我们会遇到这种需求：希望这个函数执行一次后就改变函数体，比如:  只有第一次click出发函数，接下来什么都不做</p>
 <p>函数如下：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="keyword">function</span> <span class="function"><span class="title">a</span></span>() &#123; </div><div class="line">    console.log(<span class="string">"1"</span>);</div><div class="line">     a = <span class="function"><span class="title">function</span></span>() &#123;</div><div class="line">           console.log(<span class="string">"2"</span>);</div><div class="line">         &#125; </div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">function</span> <span class="function"><span class="title">a</span></span>() &#123; </span><br><span class="line">    console.log(<span class="string">"1"</span>);</span><br><span class="line">     a = <span class="function"><span class="title">function</span></span>() &#123;</span><br><span class="line">           console.log(<span class="string">"2"</span>);</span><br><span class="line">         &#125; </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
       
 
       

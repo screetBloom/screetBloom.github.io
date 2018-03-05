@@ -8,21 +8,21 @@
   <link rel="dns-prefetch" href="https://screetbloom.github.io">
   <title>我的web框架 | Wim_Chen的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="引言逐步迭代，最终形成属于自己的web框架  WeCat.js,目前更新0.1版本(不完全) 基于koa.js进一步封装形成极简的后台框架(目的就是让用户用写js的方法快速的搭建属于自己前台后台);">
+  <meta name="description" content="引言逐步迭代，最终形成属于自己的web框架  WeCat.js,目前更新0.1版本(不完全) 基于koa.js进一步封装形成极简的后台框架(目的就是让用户用写js的方法快速的搭建属于自己前台后台); 2017-11-13注：  目前一方面忙于实现的工作，同时在进行框架的开发：本博客内容暂不更新，已完成模板和路由部分，稍后进行分享预计分享时间：  2018-3-30">
 <meta name="keywords" content="置顶,web框架">
 <meta property="og:type" content="article">
 <meta property="og:title" content="我的web框架">
 <meta property="og:url" content="https://screetbloom.github.io/2017/09/05/webFrameWorks/index.html">
 <meta property="og:site_name" content="Wim_Chen的博客">
-<meta property="og:description" content="引言逐步迭代，最终形成属于自己的web框架  WeCat.js,目前更新0.1版本(不完全) 基于koa.js进一步封装形成极简的后台框架(目的就是让用户用写js的方法快速的搭建属于自己前台后台);">
+<meta property="og:description" content="引言逐步迭代，最终形成属于自己的web框架  WeCat.js,目前更新0.1版本(不完全) 基于koa.js进一步封装形成极简的后台框架(目的就是让用户用写js的方法快速的搭建属于自己前台后台); 2017-11-13注：  目前一方面忙于实现的工作，同时在进行框架的开发：本博客内容暂不更新，已完成模板和路由部分，稍后进行分享预计分享时间：  2018-3-30">
 <meta property="og:image" content="http://7xl4c6.com1.z0.glb.clouddn.com/FhctRyyOJ40TQDGOAN-DEJjvMSx0">
 <meta property="og:image" content="http://7xl4c6.com1.z0.glb.clouddn.com/Fuv-DqEwzA7Qty5qYzYZSrjat6zv">
 <meta property="og:image" content="https://sfault-image.b0.upaiyun.com/233/037/2330372332-57c291e9d639d_articlex">
 <meta property="og:image" content="https://sfault-image.b0.upaiyun.com/101/400/1014009740-585118dc043f4_articlex">
-<meta property="og:updated_time" content="2018-03-03T00:59:36.764Z">
+<meta property="og:updated_time" content="2018-03-03T10:34:34.085Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="我的web框架">
-<meta name="twitter:description" content="引言逐步迭代，最终形成属于自己的web框架  WeCat.js,目前更新0.1版本(不完全) 基于koa.js进一步封装形成极简的后台框架(目的就是让用户用写js的方法快速的搭建属于自己前台后台);">
+<meta name="twitter:description" content="引言逐步迭代，最终形成属于自己的web框架  WeCat.js,目前更新0.1版本(不完全) 基于koa.js进一步封装形成极简的后台框架(目的就是让用户用写js的方法快速的搭建属于自己前台后台); 2017-11-13注：  目前一方面忙于实现的工作，同时在进行框架的开发：本博客内容暂不更新，已完成模板和路由部分，稍后进行分享预计分享时间：  2018-3-30">
 <meta name="twitter:image" content="http://7xl4c6.com1.z0.glb.clouddn.com/FhctRyyOJ40TQDGOAN-DEJjvMSx0">
   
     <link rel="alternative" href="/atom.xml" title="Wim_Chen的博客" type="application/atom+xml">
@@ -191,12 +191,13 @@
       
         <h3 id="引言"><a href="#引言" class="headerlink" title="引言"></a>引言</h3><p>逐步迭代，最终形成属于自己的web框架  WeCat.js,目前更新0.1版本(不完全)</p>
 <p>基于koa.js进一步封装形成极简的后台框架(目的就是让用户用写js的方法快速的搭建属于自己前台后台);</p>
+<p>2017-11-13注：  目前一方面忙于实现的工作，同时在进行框架的开发：本博客内容暂不更新，已完成模板和路由部分，稍后进行分享<br>预计分享时间：  2018-3-30</p>
 <a id="more"></a>
 <h2 id="整体实现"><a href="#整体实现" class="headerlink" title="整体实现"></a>整体实现</h2><p><img src="http://7xl4c6.com1.z0.glb.clouddn.com/FhctRyyOJ40TQDGOAN-DEJjvMSx0" alt=""></p>
 <h2 id="0-1版本项目结构"><a href="#0-1版本项目结构" class="headerlink" title="0.1版本项目结构"></a>0.1版本项目结构</h2><p>WeCat.js 0.1<br> &emsp;-&gt;assets<br>   &emsp;&emsp;&emsp; -&gt;img<br>   &emsp;&emsp;&emsp; -&gt;other<br> &emsp;-&gt;component<br>    &emsp;&emsp;&emsp; -&gt;home.js<br>    &emsp;&emsp;&emsp; -&gt;cat.js<br> &emsp; -&gt;router<br>    &emsp;&emsp;&emsp; -&gt;index.js<br> &emsp; -&gt;template<br>    &emsp;&emsp;&emsp; -&gt;header.js<br>    &emsp;&emsp;&emsp; -&gt;left.js<br> &emsp; -&gt;app.html</p>
 <h2 id="项目截图"><a href="#项目截图" class="headerlink" title="项目截图"></a>项目截图</h2><p><img src="http://7xl4c6.com1.z0.glb.clouddn.com/Fuv-DqEwzA7Qty5qYzYZSrjat6zv" alt=""> </p>
 <h2 id="简单实践"><a href="#简单实践" class="headerlink" title="简单实践"></a>简单实践</h2><h2 id="1-路由"><a href="#1-路由" class="headerlink" title="1. 路由"></a>1. 路由</h2><p><img src="https://sfault-image.b0.upaiyun.com/233/037/2330372332-57c291e9d639d_articlex" alt=""></p>
-<h3 id="借助hash实现路由"><a href="#借助hash实现路由" class="headerlink" title="借助hash实现路由"></a>借助hash实现路由</h3><ul>
+<h3 id="借助hash实现路由，这部分正在持续改进"><a href="#借助hash实现路由，这部分正在持续改进" class="headerlink" title="借助hash实现路由，这部分正在持续改进"></a>借助hash实现路由，这部分正在持续改进</h3><ul>
 <li><p>切换页面：捕获url的hash展示对应组件</p>
 </li>
 <li><p>注册路由：</p>

@@ -256,7 +256,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2018/03/15/commander/">自定义nodejs命令，发布到npm仓库</a>
+      <a class="article-title" href="/2018/03/15/commander/">自定义前端脚手架，发布到npm仓库</a>
     </h1>
   
 
@@ -269,7 +269,16 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="导言"><a href="#导言" class="headerlink" title="导言"></a>导言</h3><p>如何自定义自己的nodejs命令，实现如下效果：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">// <span class="string">"snowcat"</span>为自定义命令</span><br><span class="line">npm install snowcat</span><br><span class="line"></span><br><span class="line">// 输出帮助信息</span><br><span class="line">snowcat -h</span><br><span class="line"></span><br><span class="line">// 初始化模版</span><br><span class="line">snow -init</span><br></pre></td></tr></table></figure></p>
+        <h3 id="脚手架"><a href="#脚手架" class="headerlink" title="脚手架"></a>脚手架</h3><p>该部分已经开发完成，请按照下述使用方式拉取框架</p>
+<p>模版内置支持</p>
+<ul>
+<li>热更新、支持es6、less或sass等</li>
+<li>利用html-webpack-plugin来生成html页面</li>
+<li>利用 extract-text-webpack-plugin 自动加载生成的css、less等</li>
+<li>处理资源的动态路径问题</li>
+<li>合理管理前端环境，如预发环境和线上环境</li>
+</ul>
+<p>脚手架使用方式（已发布到npm仓库）<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">// 安装脚手架,不全局安装的画，snowcat命令只能在当前文件夹使用</span><br><span class="line">npm install snowcat -g</span><br><span class="line">// 拉取项目模板</span><br><span class="line">snowcat init</span><br></pre></td></tr></table></figure></p>
         
           <a class="article-more-a" href="/2018/03/15/commander/#more">展开全文 >></a>
         

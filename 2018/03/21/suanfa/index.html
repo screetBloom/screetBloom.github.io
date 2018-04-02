@@ -18,7 +18,7 @@
 <meta property="og:image" content="http://7xl4c6.com1.z0.glb.clouddn.com/Fp5eW0ZkRa_BTF9VGDhqjBjptyg8">
 <meta property="og:image" content="http://7xl4c6.com1.z0.glb.clouddn.com/FgMKGziUD44r3d5EJc_I419hxG7x">
 <meta property="og:image" content="http://7xl4c6.com1.z0.glb.clouddn.com/FvpGW_liOsFWxuck2ahm7nH4PfaL">
-<meta property="og:updated_time" content="2018-03-25T07:32:24.848Z">
+<meta property="og:updated_time" content="2018-04-02T10:46:54.654Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="小哥哥为你通俗讲算法-忘都忘不掉">
 <meta name="twitter:description" content="结合各大招聘例题简单的通俗易懂的说一下先来讲经典例题：出栈入栈用知名互联网企业的某一例题演示（怎么这张图好大-_-!）">
@@ -193,7 +193,15 @@
 <p>像看到这种题目，第一时间看这句：<strong>入栈序列是m、n、x、y、z</strong><br>把下面这张图先画出来   </p>
 <p><img src="http://7xl4c6.com1.z0.glb.clouddn.com/FgMKGziUD44r3d5EJc_I419hxG7x" alt="">     </p>
 <p>先来看上面的c、d选项，像这种最容易判断，具有统一特点的：”n”先出栈。<br>直接就能得出结论：n一定是入栈之后立马出栈；那么接下来跟着出栈的必然是 <strong>m 或者 x 或者 z，和y没有半毛钱关系</strong>。<br>直接锁定<strong>选项c一定是错的</strong><br>n出栈后的情况如下图所示：<br><img src="http://7xl4c6.com1.z0.glb.clouddn.com/FvpGW_liOsFWxuck2ahm7nH4PfaL" alt=""><br>接下来，再来看选项A、B、D,就很顺其自然了<br>A一定是：m入栈之后直接出栈；n入栈之后直接出栈；x、y、z也都是入栈后直接出栈<br>B的顺序是： m入栈；n入栈；x入栈后直接出栈；n跟着出栈；y入栈之后直接出栈；z入栈之后直接出栈；最先进去的m最后出栈<br>D的顺序是： m入栈；n入栈后直接出栈；m跟着出栈；x入栈；y入栈后直接出栈；z入栈后直接出栈；x出栈   </p>
-<h2 id="数结构的遍历"><a href="#数结构的遍历" class="headerlink" title="数结构的遍历"></a>数结构的遍历</h2>
+<h2 id="快速排序"><a href="#快速排序" class="headerlink" title="快速排序"></a>快速排序</h2><p>作为最常见的排序，平均O(nlogn),最坏O(n^2),最优O(nlogn),但快速排序通常明显的优于其它算法<br>快排思路：    </p>
+<ul>
+<li>从数组的中间位置挑选出一个数据作为基准（pivot）</li>
+<li>重新排序数组，所有元素比基准小的放在左边，比基准大的放在右边，相同的任意摆放，</li>
+<li>一趟结束，此时基准处于中间位置，上述的一次操作叫分区（partition）</li>
+<li>递归的对第一次分区后的左边数组、右边数组分别分区   </li>
+</ul>
+<p>js实现如下：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">quickSort([1,8,5,9,6]) //[1,5,6,8,9]</span><br><span class="line"></span><br><span class="line"><span class="keyword">function</span> quickSort(arr)&#123;</span><br><span class="line">   <span class="keyword">if</span>(arr.length === 1) <span class="built_in">return</span> ; </span><br><span class="line">   var pIndex = Math.floor(arr.length/2),</span><br><span class="line">       pivot = arr.splice(pIndex,1)[0],</span><br><span class="line">       left = [],</span><br><span class="line">       right = [];</span><br><span class="line">   <span class="keyword">for</span>(var i =0;i&lt;arr.length;i++)&#123;</span><br><span class="line">      <span class="keyword">if</span>(arr[i] &lt; pivot)&#123;</span><br><span class="line">         left.push(arr[i])</span><br><span class="line">      &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">         arr.push(arr[i])</span><br><span class="line">      &#125;</span><br><span class="line">   &#125;</span><br><span class="line">   // 递归排序</span><br><span class="line">   <span class="built_in">return</span> quickSort(left).concat([pivot],quickSort(right))         </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+
       
 
       

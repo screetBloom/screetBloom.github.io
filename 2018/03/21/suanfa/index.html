@@ -8,20 +8,20 @@
   <link rel="dns-prefetch" href="https://screetbloom.github.io">
   <title>小哥哥为你通俗讲算法-忘都忘不掉 | Wim_Chen的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="结合各大招聘例题简单的通俗易懂的说一下先来讲经典例题：出栈入栈用知名互联网企业的某一例题演示（怎么这张图好大-_-!）">
+  <meta name="description" content="结合各大招聘例题简单的通俗易懂的说一下先来讲经典例题：出栈入栈、快排">
 <meta name="keywords" content="算法">
 <meta property="og:type" content="article">
 <meta property="og:title" content="小哥哥为你通俗讲算法-忘都忘不掉">
 <meta property="og:url" content="https://screetbloom.github.io/2018/03/21/suanfa/index.html">
 <meta property="og:site_name" content="Wim_Chen的博客">
-<meta property="og:description" content="结合各大招聘例题简单的通俗易懂的说一下先来讲经典例题：出栈入栈用知名互联网企业的某一例题演示（怎么这张图好大-_-!）">
+<meta property="og:description" content="结合各大招聘例题简单的通俗易懂的说一下先来讲经典例题：出栈入栈、快排">
 <meta property="og:image" content="http://7xl4c6.com1.z0.glb.clouddn.com/Fp5eW0ZkRa_BTF9VGDhqjBjptyg8">
 <meta property="og:image" content="http://7xl4c6.com1.z0.glb.clouddn.com/FgMKGziUD44r3d5EJc_I419hxG7x">
 <meta property="og:image" content="http://7xl4c6.com1.z0.glb.clouddn.com/FvpGW_liOsFWxuck2ahm7nH4PfaL">
-<meta property="og:updated_time" content="2018-04-04T03:38:58.300Z">
+<meta property="og:updated_time" content="2018-04-08T03:48:56.283Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="小哥哥为你通俗讲算法-忘都忘不掉">
-<meta name="twitter:description" content="结合各大招聘例题简单的通俗易懂的说一下先来讲经典例题：出栈入栈用知名互联网企业的某一例题演示（怎么这张图好大-_-!）">
+<meta name="twitter:description" content="结合各大招聘例题简单的通俗易懂的说一下先来讲经典例题：出栈入栈、快排">
 <meta name="twitter:image" content="http://7xl4c6.com1.z0.glb.clouddn.com/Fp5eW0ZkRa_BTF9VGDhqjBjptyg8">
   
     <link rel="alternative" href="/atom.xml" title="Wim_Chen的博客" type="application/atom+xml">
@@ -188,8 +188,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="结合各大招聘例题简单的通俗易懂的说一下"><a href="#结合各大招聘例题简单的通俗易懂的说一下" class="headerlink" title="结合各大招聘例题简单的通俗易懂的说一下"></a>结合各大招聘例题简单的通俗易懂的说一下</h2><p>先来讲经典例题：出栈入栈<br>用知名互联网企业的某一例题演示（怎么这张图好大-_-!）<br><img src="http://7xl4c6.com1.z0.glb.clouddn.com/Fp5eW0ZkRa_BTF9VGDhqjBjptyg8" alt="">      </p>
-<a id="more"></a>
+        <h2 id="结合各大招聘例题简单的通俗易懂的说一下"><a href="#结合各大招聘例题简单的通俗易懂的说一下" class="headerlink" title="结合各大招聘例题简单的通俗易懂的说一下"></a>结合各大招聘例题简单的通俗易懂的说一下</h2><p>先来讲经典例题：出栈入栈、快排<br><a id="more"></a><br>用知名互联网企业的某一例题演示（怎么这张图好大-_-!）<br><img src="http://7xl4c6.com1.z0.glb.clouddn.com/Fp5eW0ZkRa_BTF9VGDhqjBjptyg8" alt="">      </p>
 <p>像看到这种题目，第一时间看这句：<strong>入栈序列是m、n、x、y、z</strong><br>把下面这张图先画出来   </p>
 <p><img src="http://7xl4c6.com1.z0.glb.clouddn.com/FgMKGziUD44r3d5EJc_I419hxG7x" alt="">     </p>
 <p>先来看上面的c、d选项，像这种最容易判断，具有统一特点的：”n”先出栈。<br>直接就能得出结论：n一定是入栈之后立马出栈；那么接下来跟着出栈的必然是 <strong>m 或者 x 或者 z，和y没有半毛钱关系</strong>。<br>直接锁定<strong>选项c一定是错的</strong><br>n出栈后的情况如下图所示：<br><img src="http://7xl4c6.com1.z0.glb.clouddn.com/FvpGW_liOsFWxuck2ahm7nH4PfaL" alt=""><br>接下来，再来看选项A、B、D,就很顺其自然了<br>A一定是：m入栈之后直接出栈；n入栈之后直接出栈；x、y、z也都是入栈后直接出栈<br>B的顺序是： m入栈；n入栈；x入栈后直接出栈；n跟着出栈；y入栈之后直接出栈；z入栈之后直接出栈；最先进去的m最后出栈<br>D的顺序是： m入栈；n入栈后直接出栈；m跟着出栈；x入栈；y入栈后直接出栈；z入栈后直接出栈；x出栈   </p>

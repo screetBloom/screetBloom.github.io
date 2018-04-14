@@ -16,7 +16,7 @@
 <meta property="og:site_name" content="Wim_Chen的博客">
 <meta property="og:description" content="这里只是基于js讲一点语法分析parsing的东西，涉及到关键字’eval、new Function’的使用,主要讲”eval”    通常我们说的”语法解析”（parsing）指的是：从符号到模型的转换过程,这个是我们在计算机科学中已经很熟悉的一个概念这里大概解释一下，比如小学数学课：13+4 = ？    // 当然我们现在一眼就可以看出来是7 其实对一个儿童来说，这个3是什么？也只是一个符号">
 <meta property="og:image" content="http://7xl4c6.com1.z0.glb.clouddn.com/FueDxwtYg8DHdo_ebucFjcP0Iquf">
-<meta property="og:updated_time" content="2018-04-14T14:55:11.587Z">
+<meta property="og:updated_time" content="2018-04-14T14:55:28.079Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="eval、new Function()在parsing中的使用">
 <meta name="twitter:description" content="这里只是基于js讲一点语法分析parsing的东西，涉及到关键字’eval、new Function’的使用,主要讲”eval”    通常我们说的”语法解析”（parsing）指的是：从符号到模型的转换过程,这个是我们在计算机科学中已经很熟悉的一个概念这里大概解释一下，比如小学数学课：13+4 = ？    // 当然我们现在一眼就可以看出来是7 其实对一个儿童来说，这个3是什么？也只是一个符号">
@@ -194,7 +194,7 @@
 <p>如像Vue、Angular这样的template模板中含有行级指令的框架，我们可以很确定在js中没有如v-model,ng-model这样的指令，那这些指令又是如何在js中运行的呢？    </p>
 <p>处理方式一般都是将模板进行语法解析,挑出对应的自定义指令，在解析结束之后使用new Function生成对应函数（angular除外，自己另写了个针对自己框架指令的js parser）<br>详情看vue和angular的源代码<br><a href="https://github.com/angular/angular.js/blob/master/src/ng/parse.js" target="_blank" rel="noopener">https://github.com/angular/angular.js/blob/master/src/ng/parse.js</a><br><a href="https://github.com/vuejs/vue/blob/dev/src/compiler/to-function.js" target="_blank" rel="noopener">https://github.com/vuejs/vue/blob/dev/src/compiler/to-function.js</a></p>
 <p><strong>这里只是简单介绍，不深入到框架内，主要用我们自己的demo去解释基本的原理</strong><br>“new Function”可以说是我们经常会碰到的一个东西，而且使用起来很爽，尤其是在尝试写模板引擎或者一些渲染函数的时候      </p>
-<p>但是使用”new Function”其实有时候满足不了这样一种需求，我已经预定义好了指令函数，解析完对应指令之后只管执行就好<br>而new Function偏要我每次都传函数体，很明显不满足需求（如果您知道好的方法可以交流下），这个时候就需要<strong>“eval”</strong>了   </p>
+<p>但是使用”new Function”其实有时候满足不了这样一种需求：我已经预定义好了指令函数，解析完对应指令之后只管执行就好<br>而new Function偏要我每次都传函数体，很明显不满足需求（如果您知道好的方法可以交流下），这个时候就需要<strong>“eval”</strong>了   </p>
 <p>我们不结合成熟的框架来说，逻辑过于复杂，直接结合paring过程上我们自己的demo<br> <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">已知 Q等价于  a * b - (a + b)，</span><br><span class="line">    N等价于 <span class="built_in">return</span> a * a + b，</span><br><span class="line">    括号代表运算优先进行；</span><br><span class="line">形如  3Q4  =  3*4 - (3+4) = 5</span><br></pre></td></tr></table></figure></p>
 <p> 现在有一个需求，需要我们解析： <strong>‘2Q(3N4)’</strong>，并出给结果<br> 这个时候我们很直观的想到，Q、N就是两个函数<br> <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> Q(a, b) &#123;</span><br><span class="line">    <span class="built_in">return</span> a * b - (a + b)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">function</span> N(a, b) &#123;</span><br><span class="line">    <span class="built_in">return</span> a * a + b;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 

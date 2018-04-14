@@ -161,6 +161,94 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-slowDOM" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/01/08/slowDOM/">由DOM操作慢延伸到构建虚拟DOM</a>
+    </h1>
+  
+
+        
+        <a href="/2018/01/08/slowDOM/" class="archive-article-date">
+  	<time datetime="2018-01-08T02:41:18.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-01-08</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>首先有一点需要明确的是: 目前主流的框架基本都是DOM in js ,将一个个html抽象成组件，跳转页面即映射组件，包括vue、react基本都是本原理，并且目前最新的css方案是 css-in-js，这意味着什么？<br>从万物即web(很多东西都是一个webview壳子套H5页面)，到web即js</p>
+<h2 id="对”DOM操作慢”的认识"><a href="#对”DOM操作慢”的认识" class="headerlink" title="对”DOM操作慢”的认识"></a>对”DOM操作慢”的认识</h2><p>很大一部分耗时是操作dom时的浏览器动作，虚拟dom的很大一部分性能提升是把更新的操作次数减少.<br>浏览器（webkit内核的）进行一次渲染的过程如下所示：</p>
+<ul>
+<li>解析HTML，并生成一棵DOM tree</li>
+<li>解析各种样式并结合DOM tree生成一棵Render tree</li>
+<li>对Render tree的各个节点计算布局信息，比如box的位置与尺寸</li>
+<li>根据Render tree并利用浏览器的UI层进行绘制</li>
+</ul>
+<p><img src="http://img.blog.csdn.net/20161019151241893" alt=""></p>
+        
+          <a class="article-more-a" href="/2018/01/08/slowDOM/#more">展开全文 >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">心得记录</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">slowDOM</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2018/01/08/slowDOM/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-jsToShort" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -442,86 +530,6 @@
       
         <p class="article-more-link">
           <a class="article-more-a" href="/2017/09/08/calculation/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-python20170907" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/09/07/python20170907/">python遇到的一些小bug</a>
-    </h1>
-  
-
-        
-        <a href="/2017/09/07/python20170907/" class="archive-article-date">
-  	<time datetime="2017-09-07T02:35:43.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-09-07</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>python在3.x之后，有时候运行程序时出现“AttributeError: module ‘urllib’ has no attribute ‘resquest’” 或者 “’module’ object has no attribute ‘request’”这种奇怪的错误</p>
-<p>这个时候，找到下载python的位置，打开“_pychche_”文件夹，比如我的”\Python\Python36-32\Lib__pycache__” ,将 string开头的文件删除即可.<br><img src="http://7xl4c6.com1.z0.glb.clouddn.com/FlUqEdzrtCP06O6eJoi9NSGawT64" alt=""></p>
-<p>详情原理看这里: here <a href="https://stackoverflow.com/questions/27367618/python-urllib-error-attributeerror-module-object-has-no-attribute-request" target="_blank" rel="noopener">stackoverflow</a> !</p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">python</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">常见错误</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/09/07/python20170907/">展开全文 >></a>
         </p>
       
 

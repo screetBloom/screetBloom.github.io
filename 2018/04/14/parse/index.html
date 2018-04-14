@@ -16,7 +16,7 @@
 <meta property="og:site_name" content="Wim_Chen的博客">
 <meta property="og:description" content="这里只是基于js讲一点语法分析parsing的东西，涉及到关键字’eval、new Function’的使用,主要讲”eval”    通常我们说的”语法解析”（parsing）指的是：从符号到模型的转换过程,这个是我们在计算机科学中已经很熟悉的一个概念这里大概解释一下，比如小学数学课：13+4 = ？    // 当然我们现在一眼就可以看出来是7 其实对一个儿童来说，这个3是什么？也只是一个符号">
 <meta property="og:image" content="http://7xl4c6.com1.z0.glb.clouddn.com/FueDxwtYg8DHdo_ebucFjcP0Iquf">
-<meta property="og:updated_time" content="2018-04-14T14:52:43.515Z">
+<meta property="og:updated_time" content="2018-04-14T14:53:47.383Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="eval、new Function()在parsing中的使用">
 <meta name="twitter:description" content="这里只是基于js讲一点语法分析parsing的东西，涉及到关键字’eval、new Function’的使用,主要讲”eval”    通常我们说的”语法解析”（parsing）指的是：从符号到模型的转换过程,这个是我们在计算机科学中已经很熟悉的一个概念这里大概解释一下，比如小学数学课：13+4 = ？    // 当然我们现在一眼就可以看出来是7 其实对一个儿童来说，这个3是什么？也只是一个符号">
@@ -189,7 +189,7 @@
         <p>这里只是基于js讲一点语法分析parsing的东西，涉及到关键字’eval、new Function’的使用,主要讲”eval”   </p>
 <p>通常我们说的”语法解析”（parsing）指的是：从符号到模型的转换过程,这个是我们在计算机科学中已经很熟悉的一个概念<br>这里大概解释一下，比如小学数学课：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">3+4 = ？    // 当然我们现在一眼就可以看出来是7</span><br></pre></td></tr></table></figure></p>
 <p>其实对一个儿童来说，这个3是什么？也只是一个符号，需要经过学习，才能形成意识：这个像大耳朵图图的耳朵一样的图案代表的就是数值3，代表的大小和三个手指头的大小一样      </p>
-<p>然后才会把这个抽象成数据模型： 左边伸出3个手指代表数值3，右边伸出4个手指代表数值4，加起来数一下，结果是7<br><a id="more"></a><br>当我们接受过专业的训练之后，这个就是一个表达式(expression),一个数值运算的表达式<br>我们脑海中大概会建立如下的数据模型<br><img src="http://7xl4c6.com1.z0.glb.clouddn.com/FueDxwtYg8DHdo_ebucFjcP0Iquf" alt=""></p>
+<p>然后才会把这个抽象成数据模型： 左边伸出3个手指代表数值3，右边伸出4个手指代表数值4，加起来数一下，结果是7<br><a id="more"></a><br>当我们接受过专业的训练之后，立刻就能明白：这个就是一个表达式(expression),一个数值运算的表达式<br>我们脑海中大概会建立如下的数据模型<br><img src="http://7xl4c6.com1.z0.glb.clouddn.com/FueDxwtYg8DHdo_ebucFjcP0Iquf" alt=""></p>
 <p>中间这个+，在计算机科学中一般是一个加法器，当然我们现在要说的是js<br>在js中，这个 ‘3+4=’数据模型所代表的其实是一个函数，输入2个参数，返回结果<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">fn(3,4)   // 7</span><br><span class="line"></span><br><span class="line">fn(a,b)&#123;</span><br><span class="line">    <span class="built_in">return</span> a+b</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 <p>如像Vue、Angular这样的template模板中含有行级指令的框架，我们可以很确定在js中没有如v-model,ng-model这样的指令，那这些指令又是如何在js中运行的呢？<br>一般都是将模板进行语法解析,挑出对应的自定义指令，在解析结束之后使用new Function生成对应函数（angular除外，自己另写了个针对自己框架指令的js parser）<br>详情看vue和angular的源代码<br><a href="https://github.com/angular/angular.js/blob/master/src/ng/parse.js" target="_blank" rel="noopener">https://github.com/angular/angular.js/blob/master/src/ng/parse.js</a><br><a href="https://github.com/vuejs/vue/blob/dev/src/compiler/to-function.js" target="_blank" rel="noopener">https://github.com/vuejs/vue/blob/dev/src/compiler/to-function.js</a></p>
 <p><strong>这里只是简单介绍，不深入到框架内，用我们自己的demo去解释基本的原理</strong><br>“new Function”可以说是我们经常会碰到的一个东西，而且使用起来很爽，尤其是在尝试写模板引擎或者一些渲染函数的时候      </p>

@@ -8,17 +8,17 @@
   <link rel="dns-prefetch" href="https://screetbloom.github.io">
   <title>微型vue实现 | Wim_Chen的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="特性：  数据响应式更新 指令模板 MVVM 轻量级  功能解读1234567891011121314151617181920212223 &amp;lt;templete&amp;gt;    &amp;lt;div id=&apos;app&apos;&amp;gt;        &amp;lt;div&amp;gt;            &amp;lt;input v-model=&apos;counter&apos; /&amp;gt;            &amp;lt;button v-">
+  <meta name="description" content="vue的一种简单而直观的实现方式，正在迭代  特性：  数据响应式更新 指令模板 MVVM 轻量级">
 <meta name="keywords" content="vue">
 <meta property="og:type" content="article">
 <meta property="og:title" content="微型vue实现">
 <meta property="og:url" content="https://screetbloom.github.io/2018/04/22/vue/index.html">
 <meta property="og:site_name" content="Wim_Chen的博客">
-<meta property="og:description" content="特性：  数据响应式更新 指令模板 MVVM 轻量级  功能解读1234567891011121314151617181920212223 &amp;lt;templete&amp;gt;    &amp;lt;div id=&apos;app&apos;&amp;gt;        &amp;lt;div&amp;gt;            &amp;lt;input v-model=&apos;counter&apos; /&amp;gt;            &amp;lt;button v-">
-<meta property="og:updated_time" content="2018-04-22T11:59:37.861Z">
+<meta property="og:description" content="vue的一种简单而直观的实现方式，正在迭代  特性：  数据响应式更新 指令模板 MVVM 轻量级">
+<meta property="og:updated_time" content="2018-04-22T12:02:29.954Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="微型vue实现">
-<meta name="twitter:description" content="特性：  数据响应式更新 指令模板 MVVM 轻量级  功能解读1234567891011121314151617181920212223 &amp;lt;templete&amp;gt;    &amp;lt;div id=&apos;app&apos;&amp;gt;        &amp;lt;div&amp;gt;            &amp;lt;input v-model=&apos;counter&apos; /&amp;gt;            &amp;lt;button v-">
+<meta name="twitter:description" content="vue的一种简单而直观的实现方式，正在迭代  特性：  数据响应式更新 指令模板 MVVM 轻量级">
   
     <link rel="alternative" href="/atom.xml" title="Wim_Chen的博客" type="application/atom+xml">
   
@@ -184,13 +184,15 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p> 特性：</p>
+        <p>vue的一种简单而直观的实现方式，正在迭代</p>
+<p> 特性：</p>
 <ul>
 <li>数据响应式更新</li>
 <li>指令模板</li>
 <li>MVVM</li>
 <li>轻量级</li>
 </ul>
+<a id="more"></a>
 <h2 id="功能解读"><a href="#功能解读" class="headerlink" title="功能解读"></a>功能解读</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"> &lt;templete&gt;</span><br><span class="line">    &lt;div id=<span class="string">'app'</span>&gt;</span><br><span class="line">        &lt;div&gt;</span><br><span class="line">            &lt;input v-model=<span class="string">'counter'</span> /&gt;</span><br><span class="line">            &lt;button v-on-click=<span class="string">'add'</span>&gt;add&lt;/button&gt;</span><br><span class="line">            &lt;p v-text=<span class="string">'counter'</span>&gt;&lt;/p&gt;</span><br><span class="line">        &lt;/div&gt;</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line"> &lt;/templete&gt;</span><br><span class="line"></span><br><span class="line"> &lt;script&gt;</span><br><span class="line">var vm = new Vue(&#123;</span><br><span class="line">        id: <span class="string">'counter'</span>,</span><br><span class="line">        data: &#123;</span><br><span class="line">            counter: 1</span><br><span class="line">        &#125;,</span><br><span class="line">        methods: &#123;</span><br><span class="line">            add: <span class="function"><span class="title">function</span></span> () &#123;</span><br><span class="line">                this.counter += 1;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;)</span><br><span class="line"> &lt;/script&gt;</span><br></pre></td></tr></table></figure>
 <p> 如上为一段模板以及js脚本，我们所要实现的目标就是将 vm 实例与id为app的DOM节点关联起来，当更改vm data 的counter属性的时候，<br> input的值和p标签的文本会响应式的改变，method中的add方法则和button的click事件绑定。<br> 简单的说就是, 当点击button按钮的时候，触发button的点击事件回调函数add,在add方法中使counter加1，counter变化后模板中的input<br> 和p标签会自动更新。vm与模板之间是如何关联的则是通过 v-model、v-on-click、v-text这样的指令声明的。   </p>
 <h2 id="实现思路详解"><a href="#实现思路详解" class="headerlink" title="实现思路详解"></a>实现思路详解</h2><ul>

@@ -15,7 +15,7 @@
 <meta property="og:url" content="https://screetbloom.github.io/2018/04/22/vue/index.html">
 <meta property="og:site_name" content="Wim_Chen的博客">
 <meta property="og:description" content="vue的一种简单而直观的实现方式，正在迭代自己的一套东西,本部分只做参考 特性：  数据响应式更新 指令模板 MVVM 轻量级 如果这部分对您有帮助，可以帮我点个star,=&amp;gt;博客所在github仓库源码，谢谢">
-<meta property="og:updated_time" content="2018-04-27T14:42:57.701Z">
+<meta property="og:updated_time" content="2018-04-27T14:43:48.531Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="微型vue实现">
 <meta name="twitter:description" content="vue的一种简单而直观的实现方式，正在迭代自己的一套东西,本部分只做参考 特性：  数据响应式更新 指令模板 MVVM 轻量级 如果这部分对您有帮助，可以帮我点个star,=&amp;gt;博客所在github仓库源码，谢谢">
@@ -211,8 +211,8 @@
  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">text: <span class="keyword">function</span> (el, value) &#123;</span><br><span class="line">       el.textContent = value || <span class="string">''</span>;</span><br><span class="line">   &#125;</span><br></pre></td></tr></table></figure>
 <p> 指令与节点的绑定即将该函数与节点绑定起来，即该函数负责该节点的更新操作，<strong>v-text</strong>的功能是更新文本值，所以如上所示<br> 更改节点的textContent属性值。</p>
 <h5 id="3-响应式数据与节点的绑定-bindAccessors"><a href="#3-响应式数据与节点的绑定-bindAccessors" class="headerlink" title="3. 响应式数据与节点的绑定(bindAccessors)"></a>3. 响应式数据与节点的绑定(bindAccessors)</h5><p> 响应式数据这里拆分为 data 和 methods 对象，分别用来存储数据值和方法。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">var vm = new Vue(&#123;</span><br><span class="line">    id: <span class="string">'counter'</span>,</span><br><span class="line">    data: &#123;</span><br><span class="line">        counter: 1</span><br><span class="line">    &#125;,</span><br><span class="line">    methods: &#123;</span><br><span class="line">        add: <span class="function"><span class="title">function</span></span> () &#123;</span><br><span class="line">            this.counter += 1;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></p>
-<pre><code>我们上面解析得到 v-model 对于的指令值为 counter,所以这里将data中的counter与当前节点绑定。
-</code></pre><p> 通过2、3两步实现了类型与 textDirective-&gt;el&lt;-data.counter 的关联，当data.counter发生set(具体查看defineProperty set 用法)操作时，<br> data.counter得知自己被改变了，所以通知el元素需要进行更新操作，el则使用与其关联的指令(textDirective)对自身进行更新操作，从而实现了数据的<br> 响应式。</p>
+<p> 我们上面解析得到 v-model 对于的指令值为 counter,所以这里将data中的counter与当前节点绑定。</p>
+<p> 通过2、3两步实现了类型与 textDirective-&gt;el&lt;-data.counter 的关联，当data.counter发生set(具体查看defineProperty set 用法)操作时，<br> data.counter得知自己被改变了，所以通知el元素需要进行更新操作，el则使用与其关联的指令(textDirective)对自身进行更新操作，从而实现了数据的<br> 响应式。</p>
 <pre><code>* textDirective
 * el
 * data.counter

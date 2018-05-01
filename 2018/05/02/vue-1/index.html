@@ -6,14 +6,23 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://screetbloom.github.io">
-  <title>Archives | Wim_Chen的博客</title>
+  <title>详细介绍如何科学的读vue - 授人以渔 | Wim_Chen的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Wim_Chen的博客">
-<meta property="og:url" content="https://screetbloom.github.io/archives/page/3/index.html">
+  <meta name="description" content="如果对您有帮助，请一定帮忙点个star，让我有更大的动力继续分享，如果您要转载，务必补上我的github地址，谢谢兄dei原发布于个人github仓库：https://github.com/screetBloom/wecat.js vue毫不疑问是我们写框架时借鉴的核心，但是据我观察，其实很多人是不会读这种成熟的库、框架的，所以在这里先和大家说一下如何读vue 科学读vue，授人以渔？elemen">
+<meta name="keywords" content="vue.js,github,git">
+<meta property="og:type" content="article">
+<meta property="og:title" content="详细介绍如何科学的读vue - 授人以渔">
+<meta property="og:url" content="https://screetbloom.github.io/2018/05/02/vue-1/index.html">
 <meta property="og:site_name" content="Wim_Chen的博客">
+<meta property="og:description" content="如果对您有帮助，请一定帮忙点个star，让我有更大的动力继续分享，如果您要转载，务必补上我的github地址，谢谢兄dei原发布于个人github仓库：https://github.com/screetBloom/wecat.js vue毫不疑问是我们写框架时借鉴的核心，但是据我观察，其实很多人是不会读这种成熟的库、框架的，所以在这里先和大家说一下如何读vue 科学读vue，授人以渔？elemen">
+<meta property="og:image" content="http://7xl4c6.com1.z0.glb.clouddn.com/FiaRUXW8uTUs_m8UQL1yNyKozBwu">
+<meta property="og:image" content="http://7xl4c6.com1.z0.glb.clouddn.com/FnMSjLvqUx99YYk4Jy2k3L5VUhkn">
+<meta property="og:image" content="http://7xl4c6.com1.z0.glb.clouddn.com/FsWUczxuJLMhHpG7qW9NbcEvv7xx">
+<meta property="og:updated_time" content="2018-05-01T16:47:16.741Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Wim_Chen的博客">
+<meta name="twitter:title" content="详细介绍如何科学的读vue - 授人以渔">
+<meta name="twitter:description" content="如果对您有帮助，请一定帮忙点个star，让我有更大的动力继续分享，如果您要转载，务必补上我的github地址，谢谢兄dei原发布于个人github仓库：https://github.com/screetBloom/wecat.js vue毫不疑问是我们写框架时借鉴的核心，但是据我观察，其实很多人是不会读这种成熟的库、框架的，所以在这里先和大家说一下如何读vue 科学读vue，授人以渔？elemen">
+<meta name="twitter:image" content="http://7xl4c6.com1.z0.glb.clouddn.com/FiaRUXW8uTUs_m8UQL1yNyKozBwu">
   
     <link rel="alternative" href="/atom.xml" title="Wim_Chen的博客" type="application/atom+xml">
   
@@ -159,247 +168,188 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-vue-1" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      详细介绍如何科学的读vue - 授人以渔
+    </h1>
+  
+
+        
+        <a href="/2018/05/02/vue-1/" class="archive-article-date">
+  	<time datetime="2018-05-01T16:45:48.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-05-02</time>
+</a>
+        
+      </header>
     
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><strong>如果对您有帮助，请一定帮忙点个star，让我有更大的动力继续分享，如果您要转载，务必补上我的github地址，谢谢兄dei</strong><br>原发布于个人github仓库：<a href="https://github.com/screetBloom/wecat.js" target="_blank" rel="noopener">https://github.com/screetBloom/wecat.js</a></p>
+<p>vue毫不疑问是我们写框架时借鉴的核心，<strong>但是据我观察，其实很多人是不会读这种成熟的库、框架的</strong>，所以在这里先和大家说一下如何读vue</p>
+<h2 id="科学读vue，授人以渔？element-UI为什么取名element？"><a href="#科学读vue，授人以渔？element-UI为什么取名element？" class="headerlink" title="科学读vue，授人以渔？element UI为什么取名element？"></a>科学读vue，授人以渔？element UI为什么取名element？</h2><p>接下来我们会具体的回答这两个问题。<br>毫无疑问，任何东西在刚起步的时候都是非常简单，当然也包括Vue，而且一开始的代码更能清晰的展示出来最一开始作者的思路<br><a id="more"></a><br><br><br>我相信当你读vue源代码的时候，肯定也遇到过和我一样的问题，vue从2014年中后期大规模被使用以来，历时4年了。目前高度解耦的代码我是感觉很不好读的，很多时候我们都是看别人的博客和理解来读vue源码，不仅片面还都喜欢互相抄袭<br>其实，我们自己也是可以尝试完全靠自己来理解vue的，不用去看某些人云亦云的博客<br>然而当我们尝试去读源码，当我们打开<a href="https://github.com/vuejs/vue" target="_blank" rel="noopener">vue.js</a>,你会看到<br><img src="http://7xl4c6.com1.z0.glb.clouddn.com/FiaRUXW8uTUs_m8UQL1yNyKozBwu" alt="vue的github主页"><br><br><br>这里你会发现，即使你选”0.10”的branches，希望获取早期版本源码，那里面的代码也已经是中后期很系统的代码了，<strong>那么如何从最最最初期的代码读起呢？</strong><br>这个时候我们想到了commit，只要尤雨溪推代码，每次commit都会被记录下来，而在github上如何在当前仓库展示特定的某次commit呢？比如第一次的commit<br>这个我先和大家说一下，github保存commit时是用的40位的hash值来标志某一次commit，呈现在浏览器上的url是这样子的：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">https://github.com/vuejs/vue/tree/83fac017f96f34c92c3578796a7ddb443d4e1f17</span><br><span class="line">// 也可以用7位hash来访问，如</span><br><span class="line">https://github.com/vuejs/vue/tree/83fac01</span><br></pre></td></tr></table></figure></p>
+<p>url格式是：仓库地址+’/tree/hash值’，那么我们只要获得commit的hash值，就可以读到vue从第一个提交到现在的所有版本的代码，不会有任何遗漏<br>其实上述的url就是vue第一次提交的源代码，我们看图，注意标注的第一次提交：<br><img src="http://7xl4c6.com1.z0.glb.clouddn.com/FnMSjLvqUx99YYk4Jy2k3L5VUhkn" alt="vue的第一次提交"><br><strong>那么现在的问题就来了，如何获取到每一次vue项目提交的commit的hash值呢？既然是github，很明显的需要借助git命令</strong><br>方法如下：</p>
+<ul>
+<li>git clone下来</li>
+<li>在项目目录打开 控制台，输入“git log –oneline –decorate –graph –all”，来查看所有commit，你会发现有非常多的commit，远远大于github上统计的数字。可以输入10万直接翻到最后一个“83fac017”，那我们现在开始看看历史上的第一个版本的hash，然后在浏览器中输入<a href="https://github.com/vuejs/vue/tree/83fac017" target="_blank" rel="noopener">https://github.com/vuejs/vue/tree/83fac017</a> 在github上查看</li>
+<li>查看对应的head 的hash值，修改tree后面的值访问即可，我们找几个提交的代码来看看(test目录都是测试代码，可以不看)<br><img src="http://7xl4c6.com1.z0.glb.clouddn.com/FsWUczxuJLMhHpG7qW9NbcEvv7xx" alt="查看hash"></li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">// 看看第一次提交的代码，目录结构有好几个，但是主要代码就main.js里的一句</span><br><span class="line">module.exports = 123</span><br><span class="line">// 我们再看看第三次提交的代码，很明显的src目录里已经有了三个文件directives.js、filters.js、main.js；这部分可以自己去看</span><br><span class="line">// 我们重点看一下目录<span class="string">'explorations/getset.html'</span></span><br><span class="line">var app = new Element(<span class="string">'test'</span>, &#123;</span><br><span class="line">    msg: <span class="string">'hello'</span></span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<p><strong>有没有想到饿了吗前端为什么将自己的UI组件库取名”element UI”</strong>,猜的不错的话，一方面应该是致敬vue；<br>从中我们也很明显看得出来，他们很早以前就知道这个方法来查看vue的历史版本，但是遗憾的是，网上很少有”授人以鱼不如授人以渔”的做法，没人去说如何合理的去看源代码，大量充斥的都是对源码理解的相互抄袭<br><strong>到这里，如何科学的读vue就结束了，读vue使用这种方法，读react呢？还有以后读各种库呢？</strong></p>
+<p><strong>再次希望，如果对您有帮助，请一定帮忙点个star，让我有更大的动力继续分享，<a href="https://github.com/screetBloom/wecat.js" target="_blank" rel="noopener">https://github.com/screetBloom/wecat.js</a></strong></p>
+
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>给我一点关爱 :)<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="http://7xl4c6.com1.z0.glb.clouddn.com/Fhc7kZh1F6jwFYhsjP8KtFrDH-fL">
+                      <span class="reward-type">支付宝</span>
+                    </div>
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
       
       
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2017" class="archive-year">2017</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/09/08/calculation/" class="archive-article-date">
-  	<time datetime="2017-09-08T07:27:50.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-09-08</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/09/08/calculation/">js理解常见排序算法</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">js</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">vue.js</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">算法</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">github</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">git</a>
         		</li>
       		
 		</ul>
 	</div>
 
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="http://s.jiathis.com/qrcode.php?url=https://screetbloom.github.io/2018/05/02/vue-1/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/09/07/python20170907/" class="archive-article-date">
-  	<time datetime="2017-09-07T02:35:43.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-09-07</time>
-</a>
+<nav id="article-nav">
+  
+  
+    <a href="/2018/04/22/vue/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">微型vue实现</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
+        
+        
+    </div>
+</aside>
+
+
+
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/09/07/python20170907/">python遇到的一些小bug</a>
-    </h1>
+  
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">python</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">常见错误</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/09/06/tixing/" class="archive-article-date">
-  	<time datetime="2017-09-06T07:22:41.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-09-06</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/09/06/tixing/">流程备忘提醒</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">python</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">备忘提醒</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">GUI</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/09/06/timeToBreak/" class="archive-article-date">
-  	<time datetime="2017-09-06T06:39:41.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-09-06</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/09/06/timeToBreak/">定时听歌休息</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">python</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">定时休息</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/09/05/jsonStructure-1/" class="archive-article-date">
-  	<time datetime="2017-09-05T06:46:56.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-09-05</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/09/05/jsonStructure-1/">python爬虫由浅入深</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">置顶</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">python</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">爬虫</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">语言池</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
-
-    
-    <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/archives/page/2/">&laquo; Prev</a><a class="page-number" href="/archives/">1</a><a class="page-number" href="/archives/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/archives/page/4/">4</a><a class="page-number" href="/archives/page/5/">5</a><a class="extend next" rel="next" href="/archives/page/4/">Next &raquo;</a>
-    </nav>
   
 
 
@@ -422,8 +372,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,

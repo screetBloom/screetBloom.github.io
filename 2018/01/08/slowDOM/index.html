@@ -8,18 +8,18 @@
   <link rel="dns-prefetch" href="https://screetbloom.github.io">
   <title>由DOM操作慢延伸到构建虚拟DOM | Wim_Chen的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="有一点需要明确：性能受场景的影响是非常大的，不同的场景可能造成不同实现方案之间成倍的性能差距，所以Virtual DOM的性能不一定就好，需要依赖细粒度绑定来进一步优化来。     首先有一点需要明确的是: 目前主流的框架基本都是DOM in js ,将一个个html抽象成组件，跳转页面即映射组件，包括vue、react基本都是本原理，并且目前最新的css方案是 css-in-js，这意味着什么？">
+  <meta name="description" content="有一点需要明确：性能受场景的影响是非常大的，不同的场景可能造成不同实现方案之间成倍的性能差距，所以Virtual DOM的性能不一定就好，需要依赖细粒度绑定来进一步优化。     首先有一点需要明确的是: 目前主流的框架基本都是DOM in js ,将一个个html抽象成组件，跳转页面即映射组件，包括vue、react基本都是本原理，并且目前最新的css方案是 css-in-js，这意味着什么？从">
 <meta name="keywords" content="心得记录,slowDOM">
 <meta property="og:type" content="article">
 <meta property="og:title" content="由DOM操作慢延伸到构建虚拟DOM">
 <meta property="og:url" content="https://screetbloom.github.io/2018/01/08/slowDOM/index.html">
 <meta property="og:site_name" content="Wim_Chen的博客">
-<meta property="og:description" content="有一点需要明确：性能受场景的影响是非常大的，不同的场景可能造成不同实现方案之间成倍的性能差距，所以Virtual DOM的性能不一定就好，需要依赖细粒度绑定来进一步优化来。     首先有一点需要明确的是: 目前主流的框架基本都是DOM in js ,将一个个html抽象成组件，跳转页面即映射组件，包括vue、react基本都是本原理，并且目前最新的css方案是 css-in-js，这意味着什么？">
+<meta property="og:description" content="有一点需要明确：性能受场景的影响是非常大的，不同的场景可能造成不同实现方案之间成倍的性能差距，所以Virtual DOM的性能不一定就好，需要依赖细粒度绑定来进一步优化。     首先有一点需要明确的是: 目前主流的框架基本都是DOM in js ,将一个个html抽象成组件，跳转页面即映射组件，包括vue、react基本都是本原理，并且目前最新的css方案是 css-in-js，这意味着什么？从">
 <meta property="og:image" content="http://img.blog.csdn.net/20161019151241893">
-<meta property="og:updated_time" content="2018-04-22T14:16:29.351Z">
+<meta property="og:updated_time" content="2018-05-19T08:12:29.153Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="由DOM操作慢延伸到构建虚拟DOM">
-<meta name="twitter:description" content="有一点需要明确：性能受场景的影响是非常大的，不同的场景可能造成不同实现方案之间成倍的性能差距，所以Virtual DOM的性能不一定就好，需要依赖细粒度绑定来进一步优化来。     首先有一点需要明确的是: 目前主流的框架基本都是DOM in js ,将一个个html抽象成组件，跳转页面即映射组件，包括vue、react基本都是本原理，并且目前最新的css方案是 css-in-js，这意味着什么？">
+<meta name="twitter:description" content="有一点需要明确：性能受场景的影响是非常大的，不同的场景可能造成不同实现方案之间成倍的性能差距，所以Virtual DOM的性能不一定就好，需要依赖细粒度绑定来进一步优化。     首先有一点需要明确的是: 目前主流的框架基本都是DOM in js ,将一个个html抽象成组件，跳转页面即映射组件，包括vue、react基本都是本原理，并且目前最新的css方案是 css-in-js，这意味着什么？从">
 <meta name="twitter:image" content="http://img.blog.csdn.net/20161019151241893">
   
     <link rel="alternative" href="/atom.xml" title="Wim_Chen的博客" type="application/atom+xml">
@@ -186,7 +186,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p><strong>有一点需要明确：性能受场景的影响是非常大的，不同的场景可能造成不同实现方案之间成倍的性能差距，所以Virtual DOM的性能不一定就好，需要依赖细粒度绑定来进一步优化来。</strong>    </p>
+        <p><strong>有一点需要明确：性能受场景的影响是非常大的，不同的场景可能造成不同实现方案之间成倍的性能差距，所以Virtual DOM的性能不一定就好，需要依赖细粒度绑定来进一步优化。</strong>    </p>
 <p>首先有一点需要明确的是: 目前主流的框架基本都是DOM in js ,将一个个html抽象成组件，跳转页面即映射组件，包括vue、react基本都是本原理，并且目前最新的css方案是 css-in-js，这意味着什么？<br>从万物即web(很多东西都是一个webview壳子套H5页面)，到web即js</p>
 <h2 id="对”DOM操作慢”的认识"><a href="#对”DOM操作慢”的认识" class="headerlink" title="对”DOM操作慢”的认识"></a>对”DOM操作慢”的认识</h2><p>很大一部分耗时是操作dom时的浏览器动作，虚拟dom的很大一部分性能提升是把更新的操作次数减少.<br>浏览器（webkit内核的）进行一次渲染的过程如下所示：</p>
 <ul>
